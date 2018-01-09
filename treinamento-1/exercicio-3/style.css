@@ -1,0 +1,14 @@
+.header {
+    text-align: center;
+}
+
+.content {
+    padding-top: 10px !important;
+    padding: 250px;
+    text-align: justify;
+}
+
+.image-history {
+    padding: 60px;
+    text-align: center;
+}
