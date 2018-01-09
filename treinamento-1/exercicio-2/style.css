@@ -1,0 +1,31 @@
+body {
+    margin: 30px;
+    text-align: center;    
+}
+
+h1 {
+    color: black;
+    font-style: italic;
+}
+
+h2 {
+    color: gray;
+    font-size: 20px;
+}
+
+hr {
+    margin-left: 250px;
+    margin-right: 250px; 
+}
+
+.title {
+    font-family: serif;
+    padding: 20px;
+}
+
+.content {
+    font-family: New Century Schoolbook;
+    text-align: justify;
+    padding: 250px;
+    padding-top: 40px;
+}
