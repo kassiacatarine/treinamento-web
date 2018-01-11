@@ -2,9 +2,8 @@
     margin: 0;
 }
 
-header {
-    color: #F8F8F8;
-    border-color: #e7e7e7;
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 footer {
@@ -13,13 +12,13 @@ footer {
     font-size: 13px;
     background-color: #000000;
     color: #f9f9f9;
-    padding: 20px;
+    padding: 17px;
 }
 
 h1 {
     color: #14c5fe;
     background-color: #F9F9F9;
-    font-family: 'Helvetica Neue Light';
+    font-family: "Helvetica Neue Light";
     font-size: 50px;
 }
 
@@ -29,7 +28,6 @@ li{
 }
 
 a {
-    font-family: 'Helvetica Neue Bold', Helvetica;    
     border: 1px;
     padding: 40px 0px;
     font-size: 12px;
@@ -42,16 +40,46 @@ a:link, a:visited {
 }
 
 a:hover {
-	text-decoration: underline; 
+	text-decoration: underline;
 	color: #777;
 }
 
+input, select {
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 15px;
+    color: #555;
+    font-family: Proxima Nova;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+form {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-family: Proxima Nova;
+    font-size: 15px;
+    color: #999;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    display: block;
+}
 
 .barra-menu {
+    font-family: 'Helvetica Neue Bold', Helvetica;
+    text-transform: uppercase;
     border-width: 0 0 1px;
     height: 92px;
-    clear: both;
+    color: #F8F8F8;
+    border-color: #e7e7e7;
 }
+
 .menu {
     font-size: 14px;
 }
@@ -63,8 +91,8 @@ a:hover {
 }
 
 .menu-img-contrato {
-    padding-left: 8px; 
-    float: left;    
+    padding-left: 8px;
+    float: left;
 }
 
 #image-contrato {
@@ -77,16 +105,55 @@ a:hover {
     padding-bottom: 150px;
     text-align: center;
     color: #ffffff;
-    font-size: 35px;
+    font-family: "Proxima Nova";
     background-image: url("http://www.forlogic.net/wp-content/uploads/2017/03/imagem-top.png");
+    width: 100%;
+    font-size: 20px;
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.info-box-contacts {
+    margin-top: 35px;
+    padding-bottom: 45px;
+}
+
+.info-box-contacts > h4 {
+    font-family: Helvetica Neue Thin;
+    font-size: 35px;
+    color: #666;
+    font-weight: 500;
+    padding-bottom: 10px;
+}
+
+.info-box-work {
+    border: 2px solid #d6d6d6;
+    margin-top: 70px;
+    float: right;
+    box-sizing: border-box;
+}
+
+.info-box-work > h3 {
+    width: 60%;
+    float: right;
+    margin-top: 20px;
+    color: #d6d6d6;
+    font-family: Helvetica Neue Thin;
+    font-size: 35px;
+}
+
+.info-box-work > img {
+    margin: 5%;
+    width: 30%;
+    float: left;
 }
 
 .footer-about {
     background-color: #1A1A1A;
     color: #888888;
     font-family: "Open Sans";
+    line-height: 22px;
     font-size: 15px;
     padding-top: 40px;
     padding-bottom: 40px;
@@ -95,13 +162,67 @@ a:hover {
     clear: both;
 }
 
+.footer-about-content {
+    margin-bottom: 32px;
+}
+.box-instagram {
+    font-size: 16px;
+}
+
+.box-instagram > p {
+    padding-bottom: 25px;
+}
+
+.box-instagram-images > a {
+    padding-right: 12px;
+}
+
 #img-about {
     height: 55px;
-    padding-bottom: 10px;
+    padding-bottom: 17px;
 }
 
 .box-about {
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 108px;
+    padding-right: 208px;
     float: left;
+}
+
+.box-about > p {
+    margin-bottom: 25px;
+}
+
+.btn {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: Proxima Nova;    
+}
+
+.btn_enviar {
+    background-color: #07B5DD;
+    padding: 15px 50px;
+    font-size: 25px;
+    margin-left: 10px;
+    border: 1px solid #ccc;    
+}
+
+.btn_enviar:hover{
+    background-color: #2484B2;
+}
+
+.btn_curriculo {
+    background-color: #fdc00f;
+    padding: 15px 20px;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    border: 1px solid #fdc00f;
+}
+
+.btn_curriculo:hover {
+    color: #fdc00f;
+    background-color: #fff;
 }

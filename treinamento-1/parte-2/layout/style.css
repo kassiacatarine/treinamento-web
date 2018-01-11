@@ -1,0 +1,46 @@
+.content{
+    height: 647px;
+    width: 1180px;
+    background-color: gray;
+    margin:auto;
+    display: flex;
+}
+
+.box-1 {
+    height: 419px;
+    width: 880px;
+    background-color: green;
+    margin-right: 15px;
+}
+
+.box-2 {
+    height: 138px;
+    width: 276px;
+    background-color: royalblue;
+}
+
+.box-3 {
+    margin-top: 60px;
+    height: 182px;
+    width: 276px;
+    background-color: rebeccapurple;
+}
+
+.item {
+    margin: 5px;
+    height: 60px;
+    width: 410px;
+    background-color: black;
+}
+
+.box-4 {
+    background-color: white;
+}
+
+.center{
+    justify-content: center;
+}
+
+.row {
+	flex-direction: row;
+}

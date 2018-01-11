@@ -11,17 +11,19 @@
     <header>
         <div class="barra-menu">
             <div class="menu-logo">
-                <img src="images\cropped-logo_GrupoForLogic.png" alt="Logo Grupo Forlogic">                    
+                <a href="http://www.forlogic.net/">
+                    <img src="images\cropped-logo_GrupoForLogic.png" alt="Logo Grupo Forlogic">
+                </a>
             </div>
             <div class="menu">
                 <ul>
-                    <li><a href="http://www.forlogic.net/">INÍCIO</a></li>
-                    <li><a href="http://www.forlogic.net/#areas">ÁREAS DE NEGÓCIOS</a></li>
-                    <li><a href="http://www.forlogic.net/quem-somos/">QUEM SOMOS</a></li>
-                    <li><a href="http://www.forlogic.net/clientes/">CLIENTES</a></li>
-                    <li><a href="http://www.forlogic.net/novidades/">NOVIDADES</a></li>
-                    <li><a href="http://www.forlogic.net/fale-conosco/">FALE CONOSCO</a></li>
-                    <li><a href="http://www.forlogic.net/ouvidoria/">OUVIDORIA</a></li>
+                    <li><a href="http://www.forlogic.net/">Início</a></li>
+                    <li><a href="http://www.forlogic.net/#areas">Áreas de Negócios</a></li>
+                    <li><a href="http://www.forlogic.net/quem-somos/">Quem Somos</a></li>
+                    <li><a href="http://www.forlogic.net/clientes/">Clientes</a></li>
+                    <li><a href="http://www.forlogic.net/novidades/">Novidades</a></li>
+                    <li><a href="http://www.forlogic.net/fale-conosco/">Fale Conosco</a></li>
+                    <li><a href="http://www.forlogic.net/ouvidoria/">Ouvidoria</a></li>
                 </ul>
             </div>
             <div class="menu-img-contrato">
@@ -31,48 +33,152 @@
     </header>
 
     <div class="main">
-        <p>Entre em contato conosco, estamos à sua disposição</p>
+        <h2>Entre em contato conosco, estamos à sua disposição</h2>
     </div>
 
     <div class="content">
-        <h1>Fale com a gente</h1>
-        <div class="form-contato">
-            <form action="" method="POST">
-            </form>
-        </div>
-        <div class="informations">
-            <div class="info-box-contacts">
-
-            </div>
-            <div class="info-box-work">
-
+        <div class="flex-conteiner">
+            <h1>Fale com a gente</h1>
+            <div class="content-form">
+                <div class="form-contato">
+                    <form action="" method="POST">
+                        <div class="flex-conteiner-mid1">
+                            <div class="item">
+                                <label for="txt_name">Nome </label>
+                                <input type="text" id="txt_name" name="name" required>
+                            </div>
+                            <div class="item">
+                                <label for="txt_email">Email </label>
+                                <input type="email" id="txt_email" name="email" required>
+                            </div>
+                            <div class="item">
+                                <label for="txt_empresa">Empresa </label>
+                                <input type="text" id="txt_empresa" name="empresa" required>
+                            </div>
+                            <div class="item">
+                                <label for="txt_telefone">Telefone </label>
+                                <input type="tel" id="txt_telefone" name="telefone">
+                            </div>
+                            <div class="item">
+                                <label for="cbx_estado">Estado </label>
+                                <select name="estado" id="cbx_estado">
+                                    <option value="Estado" selected='selected'>Estado</option>
+                                    <option value="Acre">Acre</option>
+                                    <option value="Alagoas">Alagoas</option>
+                                    <option value="Amapá">Amapá</option>
+                                    <option value="Amazonas">Amazonas</option>
+                                    <option value="Bahia">Bahia</option>
+                                    <option value="Ceará">Ceará</option>
+                                    <option value="Distrito Federal">Distrito Federal</option>
+                                    <option value="Espírito Santo">Espírito Santo</option>
+                                    <option value="Goiás">Goiás</option>
+                                    <option value="Maranhão">Maranhão</option>
+                                    <option value="Mato Grosso">Mato Grosso</option>
+                                    <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
+                                    <option value="Minas Gerais">Minas Gerais</option>
+                                    <option value="Pará">Pará</option>
+                                    <option value="Paraiba">Paraiba</option>
+                                    <option value="Paraná">Paraná</option>
+                                    <option value="Pernambuco">Pernambuco</option>
+                                    <option value="Piauí">Piauí</option>
+                                    <option value="Rio de Janeiro">Rio de Janeiro</option>
+                                    <option value="Rio Grande do Norte">Rio Grande do Norte</option>
+                                    <option value="Rio Grande do Sul">Rio Grande do Sul</option>
+                                    <option value="Rondônia">Rondônia</option>
+                                    <option value="Roraima">Roraima</option>
+                                    <option value="Santa Catarina">Santa Catarina</option>
+                                    <option value="São Paulo">São Paulo</option>
+                                    <option value="Sergipe">Sergipe</option>
+                                    <option value="Tocantins">Tocantins</option>
+                                </select>
+                            </div>
+                            <div class="item">
+                                <label for="cdx_cidade">Cidade </label>
+                                <select name="cidade" id="cbx_cidade">
+                                    <option value="Cidade" selected='selected'>Cidade</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <label for="txt_assunto">Assunto </label>
+                            <input type="text" id="txt_assunto">        
+                        </div>
+                        <div class="item">
+                                <label for="txt_desc">Deixe sua mensagem para nós </label>
+                                <textarea name="mensagem" id="txt_desc" cols="30" rows="10"></textarea>
+                        </div>
+                        <div class="item-full">
+                            <label for="txt_numeros">Digite dois números quaisquer </label>
+                            <input type="text" id="txt_numeros" value="Exemplo: 22" required>
+                            <button type="submit" class="btn btn_enviar">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="content-informations">
+                    <div class="info-box-contacts">
+                        <h4>Junte se à nós</h4>
+                        <a href="https://www.facebook.com/ForLogic">
+                            <img src="http://www.forlogic.net/wp-content/uploads/2017/03/ico-Facebook.png" alt="Logo Facebook">
+                        </a>
+                        <a href="https://twitter.com/Forlogic">
+                            <img src="http://www.forlogic.net/wp-content/uploads/2017/03/ico-Twitter.png" alt="Logo Twitter">
+                        </a>
+                        <a href="https://www.linkedin.com/company/forlogic-software">
+                            <img src="http://www.forlogic.net/wp-content/uploads/2017/03/ico-Linkedin.png" alt="Logo LinkedIn">
+                        </a>
+                        <a href="https://plus.google.com/u/0/105388293715412306500/">
+                            <img src="http://www.forlogic.net/wp-content/uploads/2017/03/ico-g.png" alt="Logo Google Plus">
+                        </a>
+                    </div>
+                    <div class="info-box-work">
+                        <img src="http://www.forlogic.net/wp-content/uploads/2017/03/cartao.png" alt="Trabalhe Conosco" id="img-box-work">
+                        <h3>
+                            TRABALHE
+                            <br>
+                            CONOSCO
+                        </h3>
+                        <button type="submit" class="btn btn_curriculo">CADASTRE SEU CURRÍCULO</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <div class="footer-about">
-        <div class="box-about">
-            <div class="img-about">
-                <img src="images\LogoGrupo_Oficial-cinza.png" alt="Logo Grupo Forlogic" id="img-about">                    
+        <div class="footer-about-content">
+            <div class="box-about">
+                <div class="img-about">
+                    <img src="images\LogoGrupo_Oficial-cinza.png" alt="Logo Grupo Forlogic" id="img-about">                    
+                </div>
+                <p>
+                    Rua Antônio Registro, 181 - Vila Seugling
+                    <br>
+                    Cornélio Procópio - Paraná
+                    <br>
+                    CEP 86.300-000
+                </p>
+                <p>
+                    Telefone: 43 3133-2200
+                    <br>
+                    E-mail: contato@forlogic.net
+                </p>
             </div>
-            <p>
-                Rua Antônio Registro, 181 - Vila Seugling
-                <br>
-                Cornélio Procópio - Paraná
-                <br>
-                CEP 86.300-000
-                <br>
-                <br>
-                Telefone: 43 3133-2200
-                <br>
-                E-mail: contato@forlogic.net
-            </p>
-        </div>
-        <div class="box-instagram">
-            <p>Instagram</p>
-            <img src="https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/c135.0.809.809/26227469_1566771100068092_7125939352152047616_n.jpg" alt="Foto instagram 1">
-            <img src="https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/c236.0.608.608/25035972_415910258844158_1027169084132818944_n.jpg" alt="Foto Instagram 2">
-            <img src="https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/c157.0.406.406/25022120_193213564565108_7858881611478073344_n.jpg" alt="Foto Instagram 3">
-            <img src="https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/25010006_334226340318836_1759851171519922176_n.jpg" alt="Foto Instagram 4">
+            <div class="box-instagram">
+                <p>Instagram</p>
+                <div class="box-instagram-images">
+                    <a href="https://www.instagram.com/p/BdTEy6SlcK6/">
+                        <img src="https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/c135.0.809.809/26227469_1566771100068092_7125939352152047616_n.jpg" alt="Foto instagram 1">
+                    </a>
+                    <a href="https://www.instagram.com/p/BdSr7Z2FeUS/">
+                        <img src="https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/c236.0.608.608/25035972_415910258844158_1027169084132818944_n.jpg" alt="Foto Instagram 2">
+                    </a>
+                    <a href="https://www.instagram.com/p/BdKtiV1gHzw/">
+                        <img src="https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/c157.0.406.406/25022120_193213564565108_7858881611478073344_n.jpg" alt="Foto Instagram 3">
+                    </a>
+                    <a href="https://www.instagram.com/p/Bc9zBFIAwhS/">
+                        <img src="https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/25010006_334226340318836_1759851171519922176_n.jpg" alt="Foto Instagram 4">
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
     <footer>
