@@ -12,7 +12,7 @@ header {
     background-color: #f8f8f8;
     border-color: #ccc;
     position: fixed;
-    border-width: 0 0 1px 0;
+    border-width: 0 0 1px;
     border-style: solid;
 }
 
@@ -25,25 +25,15 @@ footer {
     padding: 17px;
 }
 
-h1 {
-    color: #14c5fe;
-    background-color: #F9F9F9;
-    font-family: "Helvetica Neue Light";
-    font-size: 50px;
-}
-
 li {
-    font-family: 'Helvetica Neue Bold';
-    color: #777;
     display: block;
     float: left;
-    padding: 36.6px 8px;
     margin-top: 1px;
     line-height: 90px;
+    padding: 0px 8px;
     height: 90px;
-    padding: 0 8px;
     font-family: 'Helvetica Neue Bold', Helvetica;
-    color: #777;
+
     font-style: normal;
     text-transform: uppercase;
 }
@@ -71,32 +61,14 @@ select {
     padding: 6px 12px;
     font-size: 15px;
     color: #555;
-    font-family: "Proxima Nova";
+    font-family: 'Proxima Nova';
     box-sizing: border-box;
-}
-
-form {
-    display: inline-block;
-    max-width: 100%;
-    margin-bottom: 5px;
-    font-weight: 700;
-    font-family: "Proxima Nova";
-    font-size: 15px;
-    color: #999;
 }
 
 textarea {
     width: 100%;
     height: 100px;
     display: block;
-}
-
-.barra-menu {
-    font-family: 'Helvetica Neue Bold', Helvetica;
-    text-transform: uppercase;
-    height: 90px;
-    color: #F8F8F8;
-    font-size: 12px;
 }
 
 .menu-logo {
@@ -118,7 +90,7 @@ textarea {
     padding-bottom: 150px;
     text-align: center;
     color: #ffffff;
-    font-family: "Proxima Nova";
+    font-family: 'Proxima Nova' !important;
     background-image: url("http://www.forlogic.net/wp-content/uploads/2017/03/imagem-top.png");
     width: 100%;
     font-size: 20px;
@@ -136,14 +108,12 @@ textarea {
     color: #666;
     font-family: 'Helvetica Neue Thin';
     font-size: 35px;
-    margin-bottom: 15px;
 }
 
 .info-box-work {
     border: 2px solid #d6d6d6;
-    margin-top: 70px;
+    margin-top: 40px;
     float: right;
-    box-sizing: border-box;
 }
 
 .info-box-work>h3 {
@@ -164,7 +134,7 @@ textarea {
 .footer-about {
     background-color: #1A1A1A;
     color: #888888;
-    font-family: "Open Sans";
+    font-family: 'Open Sans';
     line-height: 22px;
     font-size: 15px;
     padding-top: 40px;
@@ -212,7 +182,7 @@ textarea {
     display: inline-block;
     margin: 4px 2px;
     cursor: pointer;
-    font-family: Proxima Nova;
+    font-family: 'Proxima Nova';
 }
 
 .btn_enviar {
@@ -233,6 +203,7 @@ textarea {
     margin-left: 5%;
     margin-bottom: 5%;
     border: 1px solid #fdc00f;
+    width: 90%;
 }
 
 .btn_curriculo:hover {
@@ -240,8 +211,56 @@ textarea {
     background-color: #fff;
 }
 
+/* Main Content - Flex */
+
+.center{
+    justify-content: center;
+}
+
+.main-content {
+    height: 647px;
+    width: 1180px;
+    margin:auto;
+    display: flex;
+    margin-top: 60px;    
+}
+
+.content-form {
+    flex-wrap: wrap;
+    width: 75%;
+    padding-left: 45px;
+}
+
+.content-form h1 {
+    color: #14c5fe;
+    font-size: 50px;
+    font-family: "Helvetica Neue Light";
+    line-height: 35px;
+    padding-top: 20px;
+    padding-bottom: 25px;
+}
+
 .item {
-    font-family: Proxima Nova;
+    font-size: 15px;
+    display: inline-block;
+    width: 49%;
+    padding-right: 12px;
+}
+
+.item > label {
+    font-family: 'Proxima Nova';
     font-size: 15px;
     color: #999;
+}
+
+.item > input{
+    color: #555;
+}
+
+.item-full {
+    width: 98.5%;
+}
+
+.content-informations {
+    width: 24%;
 }
