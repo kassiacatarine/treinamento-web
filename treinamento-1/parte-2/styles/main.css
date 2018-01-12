@@ -1,9 +1,19 @@
 * {
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+header {
+    width: 100%;
+    background-color: #f8f8f8;
+    border-color: #ccc;
+    position: fixed;
+    border-width: 0 0 1px 0;
+    border-style: solid;
 }
 
 footer {
@@ -22,36 +32,46 @@ h1 {
     font-size: 50px;
 }
 
-li{
+li {
+    font-family: 'Helvetica Neue Bold';
+    color: #777;
+    display: block;
     float: left;
     padding: 36.6px 8px;
+    margin-top: 1px;
+    line-height: 90px;
+    height: 90px;
+    padding: 0 8px;
+    font-family: 'Helvetica Neue Bold', Helvetica;
+    color: #777;
+    font-style: normal;
+    text-transform: uppercase;
 }
 
 a {
     border: 1px;
-    padding: 40px 0px;
     font-size: 12px;
-    font-weight: bolder;
     color: #777;
 }
 
-a:link, a:visited {
-	text-decoration: none;
+a:link,
+a:visited {
+    text-decoration: none;
 }
 
 a:hover {
-	text-decoration: underline;
-	color: #777;
+    text-decoration: underline;
+    color: #777;
 }
 
-input, select {
+input,
+select {
     width: 100%;
     height: 34px;
     padding: 6px 12px;
     font-size: 15px;
     color: #555;
-    font-family: Proxima Nova;
-    border: 1px solid #ccc;
+    font-family: "Proxima Nova";
     box-sizing: border-box;
 }
 
@@ -60,7 +80,7 @@ form {
     max-width: 100%;
     margin-bottom: 5px;
     font-weight: 700;
-    font-family: Proxima Nova;
+    font-family: "Proxima Nova";
     font-size: 15px;
     color: #999;
 }
@@ -74,24 +94,17 @@ textarea {
 .barra-menu {
     font-family: 'Helvetica Neue Bold', Helvetica;
     text-transform: uppercase;
-    border-width: 0 0 1px;
-    height: 92px;
+    height: 90px;
     color: #F8F8F8;
-    border-color: #e7e7e7;
-}
-
-.menu {
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .menu-logo {
     padding: 23px 182px;
-    padding-right: 290px;
     float: left;
 }
 
 .menu-img-contrato {
-    padding-left: 8px;
     float: left;
 }
 
@@ -119,7 +132,7 @@ textarea {
     padding-bottom: 45px;
 }
 
-.info-box-contacts > h4 {
+.info-box-contacts>h4 {
     font-family: Helvetica Neue Thin;
     font-size: 35px;
     color: #666;
@@ -134,7 +147,7 @@ textarea {
     box-sizing: border-box;
 }
 
-.info-box-work > h3 {
+.info-box-work>h3 {
     width: 60%;
     float: right;
     margin-top: 20px;
@@ -143,7 +156,7 @@ textarea {
     font-size: 35px;
 }
 
-.info-box-work > img {
+.info-box-work>img {
     margin: 5%;
     width: 30%;
     float: left;
@@ -165,15 +178,16 @@ textarea {
 .footer-about-content {
     margin-bottom: 32px;
 }
+
 .box-instagram {
     font-size: 16px;
 }
 
-.box-instagram > p {
+.box-instagram>p {
     padding-bottom: 25px;
 }
 
-.box-instagram-images > a {
+.box-instagram-images>a {
     padding-right: 12px;
 }
 
@@ -188,7 +202,7 @@ textarea {
     float: left;
 }
 
-.box-about > p {
+.box-about>p {
     margin-bottom: 25px;
 }
 
@@ -199,7 +213,7 @@ textarea {
     display: inline-block;
     margin: 4px 2px;
     cursor: pointer;
-    font-family: Proxima Nova;    
+    font-family: Proxima Nova;
 }
 
 .btn_enviar {
@@ -207,10 +221,10 @@ textarea {
     padding: 15px 50px;
     font-size: 25px;
     margin-left: 10px;
-    border: 1px solid #ccc;    
+    border: 1px solid #ccc;
 }
 
-.btn_enviar:hover{
+.btn_enviar:hover {
     background-color: #2484B2;
 }
 
@@ -225,4 +239,10 @@ textarea {
 .btn_curriculo:hover {
     color: #fdc00f;
     background-color: #fff;
+}
+
+.item {
+    font-family: Proxima Nova;
+    font-size: 15px;
+    color: #999;
 }

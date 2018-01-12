@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'Helvetica Neue Bold';
+    src: local('Helvetica Neue Bold'), local('HelveticaNeue-Bold'), url('fonts/HelveticaNeue-Bold.woff') format('woff'), url('fonts/HelveticaNeue-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Thin';
+    src: local('HelveticaNeue-Thin'), local('Helvetica Neue Thin'), url('fonts/HelveticaNeue-Thin.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Light';
+    src: local('HelveticaNeue-Light'), local('Helvetica Neue Light'), url('fonts/HelveticaNeue-Light.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: local('Proxima Nova'), local('ProximaNova-Regular'), url('fonts/ProximaNova-Regular.woff') format('woff');
+}
