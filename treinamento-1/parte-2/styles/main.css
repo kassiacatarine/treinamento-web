@@ -132,12 +132,11 @@ textarea {
     padding-bottom: 45px;
 }
 
-.info-box-contacts>h4 {
-    font-family: Helvetica Neue Thin;
-    font-size: 35px;
+.info-box-contacts>h3 {
     color: #666;
-    font-weight: 500;
-    padding-bottom: 10px;
+    font-family: 'Helvetica Neue Thin';
+    font-size: 35px;
+    margin-bottom: 15px;
 }
 
 .info-box-work {
