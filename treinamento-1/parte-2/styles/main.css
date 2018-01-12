@@ -14,6 +14,7 @@ header {
     position: fixed;
     border-width: 0 0 1px;
     border-style: solid;
+    height: 91px;
 }
 
 footer {
@@ -33,8 +34,6 @@ li {
     padding: 0px 8px;
     height: 90px;
     font-family: 'Helvetica Neue Bold', Helvetica;
-
-    font-style: normal;
     text-transform: uppercase;
 }
 
@@ -55,7 +54,7 @@ a:hover {
 }
 
 input,
-select {
+select, textarea {
     width: 100%;
     height: 34px;
     padding: 6px 12px;
@@ -63,6 +62,7 @@ select {
     color: #555;
     font-family: 'Proxima Nova';
     box-sizing: border-box;
+    border: 1px solid #ccc; 
 }
 
 textarea {
@@ -86,7 +86,7 @@ textarea {
 }
 
 .main {
-    padding-top: 150px;
+    padding-top: 300px;
     padding-bottom: 150px;
     text-align: center;
     color: #ffffff;
@@ -99,21 +99,35 @@ textarea {
     background-position: center center;
 }
 
+.main > h2{
+    font-size: 35px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 33px;
+}
+
+.content {
+    padding-bottom: 80px;
+}
 .info-box-contacts {
     margin-top: 35px;
     padding-bottom: 45px;
 }
 
-.info-box-contacts>h3 {
+.info-box-contacts>h4 {
     color: #666;
     font-family: 'Helvetica Neue Thin';
     font-size: 35px;
+    font-weight: 500;
+    padding-bottom: 15px;
+    padding-top: 20px;
 }
 
 .info-box-work {
     border: 2px solid #d6d6d6;
-    margin-top: 40px;
+    margin-top: 30px;
     float: right;
+    width: 100%;
 }
 
 .info-box-work>h3 {
@@ -123,6 +137,8 @@ textarea {
     color: #d6d6d6;
     font-family: Helvetica Neue Thin;
     font-size: 35px;
+    padding-left: 10px;
+    font-weight: 500;
 }
 
 .info-box-work>img {
@@ -133,19 +149,20 @@ textarea {
 
 .footer-about {
     background-color: #1A1A1A;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 4%;
+    font-weight: 400;
     color: #888888;
     font-family: 'Open Sans';
     line-height: 22px;
     font-size: 15px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    padding-left: 4%;
-    padding-right: 4%;
-    clear: both;
 }
 
 .footer-about-content {
-    margin-bottom: 32px;
+    width: 1180px;
+    margin:auto;
+    display: flex;
 }
 
 .box-instagram {
@@ -161,18 +178,26 @@ textarea {
 }
 
 #img-about {
-    height: 55px;
-    padding-bottom: 17px;
+    width: 227px;
+    margin-bottom: 15px;
 }
 
 .box-about {
-    padding-left: 108px;
-    padding-right: 208px;
-    float: left;
+    color: #888888;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: 'Open Sans';
+    font-style: normal;
+    letter-spacing: 0px;
+    line-height: 22px;
+    text-align: left;
+    margin-left: -30px;
+    margin-right: 200px;
 }
 
 .box-about>p {
-    margin-bottom: 25px;
+    margin: 0 0 10px;
+    padding-bottom: 20px;
 }
 
 .btn {
@@ -189,8 +214,8 @@ textarea {
     background-color: #07B5DD;
     padding: 15px 50px;
     font-size: 25px;
-    margin-left: 10px;
     border: 1px solid #ccc;
+    margin-top: 20px;
 }
 
 .btn_enviar:hover {
@@ -199,6 +224,7 @@ textarea {
 
 .btn_curriculo {
     background-color: #fdc00f;
+    font-size: 15px;
     padding: 15px 20px;
     margin-left: 5%;
     margin-bottom: 5%;
@@ -238,6 +264,8 @@ textarea {
     line-height: 35px;
     padding-top: 20px;
     padding-bottom: 25px;
+    font-weight: 500;
+    margin-bottom: 10px;
 }
 
 .item {
@@ -245,15 +273,21 @@ textarea {
     display: inline-block;
     width: 49%;
     padding-right: 12px;
+    padding-bottom: 5px;
 }
 
 .item > label {
     font-family: 'Proxima Nova';
     font-size: 15px;
     color: #999;
+    font-weight: bold;
+    font-weight: 700;
+    margin-top: 5px;
 }
 
-.item > input{
+.item > input, textarea, select{
+    margin-top: 8px;
+    margin-bottom: 2px;
     color: #555;
 }
 
@@ -262,5 +296,6 @@ textarea {
 }
 
 .content-informations {
-    width: 24%;
+    padding-left: 20px;    
+    width: 26%;
 }
