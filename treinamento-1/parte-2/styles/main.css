@@ -33,19 +33,7 @@ li {
     line-height: 90px;
     padding: 0px 8px;
     height: 90px;
-    font-family: 'Helvetica Neue Bold', Helvetica;
     text-transform: uppercase;
-}
-
-a {
-    border: 1px;
-    font-size: 12px;
-    color: #777;
-}
-
-a:link,
-a:visited {
-    text-decoration: none;
 }
 
 a:hover {
@@ -71,9 +59,25 @@ textarea {
     display: block;
 }
 
+/* Header - Menu */
+
+.menu-links{
+    font-family: 'Helvetica Neue Bold',Helvetica;
+    font-size: 14px;
+}
+
+.menu-links>a, a:link, a:visited{
+    border: 1px;
+    font-size: 14px;
+    color: #777;
+    padding: 35px 0;
+    text-decoration: none;
+}
+
 .menu-logo {
     padding: 23px 182px;
     float: left;
+    margin-right: 100px;
 }
 
 .menu-img-contrato {
@@ -81,8 +85,9 @@ textarea {
 }
 
 #image-contrato {
+    margin-left: 5px;
     width: 65px;
-    height: 91px;
+    height: 90px;
 }
 
 .main {
@@ -93,13 +98,14 @@ textarea {
     font-family: 'Proxima Nova' !important;
     background-image: url("http://www.forlogic.net/wp-content/uploads/2017/03/imagem-top.png");
     width: 100%;
-    font-size: 20px;
+    font-size: 35px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
 }
 
 .main > h2{
+    margin-top: -60px;
     font-size: 35px;
     font-weight: 500;
     font-style: normal;
@@ -110,7 +116,7 @@ textarea {
     padding-bottom: 80px;
 }
 .info-box-contacts {
-    margin-top: 35px;
+    margin-top: 30px;
     padding-bottom: 45px;
 }
 
