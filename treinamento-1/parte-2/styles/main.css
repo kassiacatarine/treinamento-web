@@ -26,6 +26,28 @@ footer {
     padding: 17px;
 }
 
+input,
+select,
+textarea {
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 15px;
+    color: #555;
+    font-family: 'Proxima Nova';
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    display: block;
+}
+
+
+/* Header - Menu */
+
 li {
     display: block;
     float: left;
@@ -36,42 +58,24 @@ li {
     text-transform: uppercase;
 }
 
-a:hover {
-    text-decoration: underline;
-    color: #777;
-}
-
-input,
-select, textarea {
-    width: 100%;
-    height: 34px;
-    padding: 6px 12px;
-    font-size: 15px;
-    color: #555;
-    font-family: 'Proxima Nova';
-    box-sizing: border-box;
-    border: 1px solid #ccc; 
-}
-
-textarea {
-    width: 100%;
-    height: 100px;
-    display: block;
-}
-
-/* Header - Menu */
-
-.menu-links{
-    font-family: 'Helvetica Neue Bold',Helvetica;
+.menu-links {
+    font-family: 'Helvetica Neue Bold', Helvetica;
     font-size: 14px;
 }
 
-.menu-links>a, a:link, a:visited{
+.menu-links a,
+a:link,
+a:visited {
     border: 1px;
     font-size: 14px;
     color: #777;
     padding: 35px 0;
     text-decoration: none;
+}
+
+.menu-links a:hover {
+    text-decoration: underline;
+    color: #777;
 }
 
 .menu-logo {
@@ -90,6 +94,9 @@ textarea {
     height: 90px;
 }
 
+
+/* Main - Título */
+
 .main {
     padding-top: 300px;
     padding-bottom: 150px;
@@ -104,7 +111,7 @@ textarea {
     background-position: center center;
 }
 
-.main > h2{
+.main>h2 {
     margin-top: -60px;
     font-size: 35px;
     font-weight: 500;
@@ -112,9 +119,13 @@ textarea {
     line-height: 33px;
 }
 
+
+/* Content - Conteúdo */
+
 .content {
     padding-bottom: 80px;
 }
+
 .info-box-contacts {
     margin-top: 30px;
     padding-bottom: 45px;
@@ -151,59 +162,6 @@ textarea {
     margin: 5%;
     width: 30%;
     float: left;
-}
-
-.footer-about {
-    background-color: #1A1A1A;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    padding-left: 4%;
-    font-weight: 400;
-    color: #888888;
-    font-family: 'Open Sans';
-    line-height: 22px;
-    font-size: 15px;
-}
-
-.footer-about-content {
-    width: 1180px;
-    margin:auto;
-    display: flex;
-}
-
-.box-instagram {
-    font-size: 16px;
-}
-
-.box-instagram>p {
-    padding-bottom: 25px;
-}
-
-.box-instagram-images>a {
-    padding-right: 12px;
-}
-
-#img-about {
-    width: 227px;
-    margin-bottom: 15px;
-}
-
-.box-about {
-    color: #888888;
-    font-size: 15px;
-    font-weight: 400;
-    font-family: 'Open Sans';
-    font-style: normal;
-    letter-spacing: 0px;
-    line-height: 22px;
-    text-align: left;
-    margin-left: -30px;
-    margin-right: 200px;
-}
-
-.box-about>p {
-    margin: 0 0 10px;
-    padding-bottom: 20px;
 }
 
 .btn {
@@ -243,18 +201,75 @@ textarea {
     background-color: #fff;
 }
 
-/* Main Content - Flex */
 
-.center{
+/* Footer - Sobre a empresa */
+
+.footer-about-content {
+    width: 1180px;
+    margin: auto;
+    display: flex;
+}
+
+.footer-about {
+    background-color: #1A1A1A;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 4%;
+    font-weight: 400;
+    color: #888888;
+    font-family: 'Open Sans';
+    line-height: 22px;
+    font-size: 15px;
+}
+
+.box-instagram {
+    font-size: 16px;
+}
+
+.box-instagram>p {
+    padding-bottom: 25px;
+}
+
+.box-instagram-images>a {
+    padding-right: 12px;
+}
+
+#img-about {
+    width: 227px;
+    margin-bottom: 15px;
+}
+
+.box-about {
+    color: #888888;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: 'Open Sans';
+    font-style: normal;
+    letter-spacing: 0px;
+    line-height: 22px;
+    text-align: left;
+    margin-left: -30px;
+    margin-right: 200px;
+}
+
+.box-about>p {
+    margin: 0 0 10px;
+    padding-bottom: 20px;
+}
+
+
+/* Main Content - Flex Form */
+
+.center {
     justify-content: center;
 }
 
 .main-content {
     height: 647px;
     width: 1180px;
-    margin:auto;
+    margin: auto;
     display: flex;
-    margin-top: 60px;    
+    margin-top: 60px;
 }
 
 .content-form {
@@ -282,7 +297,7 @@ textarea {
     padding-bottom: 5px;
 }
 
-.item > label {
+.item>label {
     font-family: 'Proxima Nova';
     font-size: 15px;
     color: #999;
@@ -291,7 +306,9 @@ textarea {
     margin-top: 5px;
 }
 
-.item > input, textarea, select{
+.item>input,
+textarea,
+select {
     margin-top: 8px;
     margin-bottom: 2px;
     color: #555;
@@ -302,6 +319,6 @@ textarea {
 }
 
 .content-informations {
-    padding-left: 20px;    
+    padding-left: 20px;
     width: 26%;
 }
