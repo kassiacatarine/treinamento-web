@@ -1,0 +1,49 @@
+/* Página Inteira */
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar */
+
+.navbar-header li a {
+    margin: auto;
+    font-size: 14px;
+    height: 90px;
+    line-height: 90px;
+    padding: 0 8px;
+    font-family: 'Helvetica Neue Bold', Helvetica;
+}
+
+.navbar-header a:hover {
+    text-decoration: underline;
+}
+
+/* Main - Title */
+
+/* .title {
+    background-image: url("http://www.forlogic.net/wp-content/uploads/2017/03/top_novidades_blue.jpg");
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 150px;
+    padding-top: 150px;
+    font-family: "Proxima Nova";
+} */
+
+.card-item-h {
+    width: 557.438px;
+    height: 129.600px;
+    padding: 10px;
+}
+
+.img-old-post img{
+    width: 139.350px;
+    height: 78.500px;
+}
+
+.title-old-post h2 a {
+    font-family: 'Helvetica Neue Medium',Helvetica!important;
+    font-size: 24px!important;
+    color: #8c8c8c!important;
+}

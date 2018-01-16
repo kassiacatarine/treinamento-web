@@ -5,14 +5,140 @@
     padding-top: 150px;
     padding-bottom: 150px;
     font-family: "Proxima Nova";
-    margin-bottom: 15px;
 }
 
 
 /* Main - Search */
 
-.search-form {}
+.main-search {
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
 
+/* News Posts */
+
+.card-item-date{
+    float: left;
+    color: #fff;
+    font-size: 18px;
+    margin-top: -54px;
+    position: absolute;
+    padding: 12px 30px;
+    background-color: #62d8fe;
+    font-weight: 600;
+    font-family: Helvetica Neue Medium;
+}
+
+.card-item-img img {
+    width: 100%;
+    height: auto;
+    border-bottom: 5px solid #16c5fe;
+}
+
+.card-item-title h2 a{
+    font-size: 24px;
+    font-family: 'Helvetica Neue Medium', Helvetica;
+    color: #8c8c8c;
+}
+
+.card-item-about {
+    padding: 15px 0 20px!important;
+    border-bottom: 1px solid #8c8c8c;
+}
+
+.card-item-about-more{
+    margin-bottom: 22px;
+}
+
+.card-item-about-more a {
+    font-size: 14px;
+    font-family: 'Helvetica Neue Medium', Helvetica;
+    color: #8c8c8c;
+}
+
+.card-item-more a {
+    font-size: 12px;
+    font-weight: 800;
+    font-family: 'Helvetica Neue Medium', Helvetica;
+    color: #8c8c8c;
+}
+
+.card-item {
+    padding: 10px;
+    margin-bottom: 40px;
+}
+
+
+.posts-new {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Old Posts */
+
+.post-old-box {
+    border-bottom: solid 1px #333;
+}
+
+.card-item-h {
+    padding: 10px;
+}
+
+.img-card-horizontal {
+    width: 139.350px;
+    height: 78.500px;
+    margin-right: 20px;
+}
+
+.title-old-post h2 a, .description-old-post {
+    font-family: 'Helvetica Neue Medium',Helvetica!important;
+    color: #8c8c8c!important;
+}
+
+.title-old-post h2 a {
+    font-size: 24px!important;
+    padding-top: 10px;
+}
+
+.title-old-post h2 {
+    margin-bottom: 0;
+}
+
+.description-old-post {
+    font-size: 14px;
+    margin-left: 160px;
+    margin-bottom: 22px;
+}
+
+/* Old Posts - Pagination */
+.text-h2-old-post {
+    color: #68adce;
+    font-family: "Helvetica Neue Light";
+}
+
+.pagination li {
+    margin-right: 10px;
+}
+
+.pagination a {
+    color: #979797;
+    padding: 12px;
+    border-radius: 3px;
+    font-size: 11px;
+}
+
+.pagination li.active a {
+    background-color: #5890e5 !important;
+    border-color: #5890e5 !important;
+}
+
+.pagination a:hover {
+    background-color: white;
+}
+
+.page-link {
+    margin: 0;
+}
 
 /* Footer - About */
 
