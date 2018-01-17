@@ -15,10 +15,27 @@
     padding-top: 20px;
 }
 
+
+/* Card global */
+
+.item-selected {
+    font-family: 'Helvetica Neue Medium', Helvetica!important;
+    color: #8c8c8c;
+}
+
+.item-selected:hover {
+    color: #16c5fe;
+    text-decoration: none;
+}
+
+.card-img-border img {
+    border-bottom: 5px solid #16c5fe;
+}
+
+
 /* News Posts */
 
-.card-item-date{
-    float: left;
+.card-item-date {
     color: #fff;
     font-size: 18px;
     margin-top: -54px;
@@ -26,41 +43,34 @@
     padding: 12px 30px;
     background-color: #62d8fe;
     font-weight: 600;
-    font-family: Helvetica Neue Medium;
 }
 
 .card-item-img img {
     width: 100%;
-    height: auto;
-    border-bottom: 5px solid #16c5fe;
+    height: 180.688px;
 }
 
-.card-item-title h2 a{
+.card-item-title h2 {
     font-size: 24px;
-    font-family: 'Helvetica Neue Medium', Helvetica;
-    color: #8c8c8c;
 }
 
 .card-item-about {
-    padding: 15px 0 20px!important;
+    padding: 15px 0 20px;
     border-bottom: 1px solid #8c8c8c;
 }
 
-.card-item-about-more{
+.card-item-about-more {
     margin-bottom: 22px;
 }
 
-.card-item-about-more a {
+.card-item-about-more {
     font-size: 14px;
-    font-family: 'Helvetica Neue Medium', Helvetica;
-    color: #8c8c8c;
 }
 
-.card-item-more a {
+.card-item-more p {
     font-size: 12px;
     font-weight: 800;
-    font-family: 'Helvetica Neue Medium', Helvetica;
-    color: #8c8c8c;
+    margin: 0;
 }
 
 .card-item {
@@ -68,20 +78,44 @@
     margin-bottom: 40px;
 }
 
-
 .posts-new {
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
+
 /* Old Posts */
 
+.text-h2-old-post {
+    color: #68adce;
+    font-family: "Helvetica Neue Light";
+    margin-bottom: 15px;
+}
+
+.content-footer {
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
+.posts-old {
+    margin-bottom: 30px;
+}
+
+.img-old-post img {
+    width: 139.359px;
+    margin-top: 10px;
+}
+
 .post-old-box {
+    width: 100%;
+    height: auto;
     border-bottom: solid 1px #333;
 }
 
 .card-item-h {
     padding: 10px;
+    width: 100%;
+    height: auto;
 }
 
 .img-card-horizontal {
@@ -90,18 +124,9 @@
     margin-right: 20px;
 }
 
-.title-old-post h2 a, .description-old-post {
-    font-family: 'Helvetica Neue Medium',Helvetica!important;
-    color: #8c8c8c!important;
-}
-
-.title-old-post h2 a {
-    font-size: 24px!important;
-    padding-top: 10px;
-}
-
 .title-old-post h2 {
-    margin-bottom: 0;
+    font-size: 24px;
+    padding-left: 160px;
 }
 
 .description-old-post {
@@ -110,17 +135,14 @@
     margin-bottom: 22px;
 }
 
+
 /* Old Posts - Pagination */
-.text-h2-old-post {
-    color: #68adce;
-    font-family: "Helvetica Neue Light";
-}
 
 .pagination li {
     margin-right: 10px;
 }
 
-.pagination a {
+.pagination li a {
     color: #979797;
     padding: 12px;
     border-radius: 3px;
@@ -139,6 +161,11 @@
 .page-link {
     margin: 0;
 }
+
+.pagination-center {
+    justify-content: center;
+}
+
 
 /* Footer - About */
 
@@ -168,4 +195,9 @@
 
 .text-margin {
     margin-top: 1rem;
+}
+
+.box-instagram-images>a {
+    margin-right: 15px;
+    margin-bottom: 15px;
 }
