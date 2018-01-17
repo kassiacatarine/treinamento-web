@@ -6,3 +6,8 @@ Repositório de Treinamento de Web
 - HTML e CSS
 - Javascript
 - Angular
+
+
+## Sobre os Exercícios
+
+Exercícios contido no material passado pela Forlogic. Link de acesso [Drive - Treinamento Web](https://drive.google.com/drive/folders/17ByiNYO8BRgSIkWhKBrlHk51zcUYu8EB?usp=sharing).
