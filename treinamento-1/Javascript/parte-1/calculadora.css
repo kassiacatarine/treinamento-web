@@ -11,7 +11,7 @@
 
 .box-display {
     border: 2px solid #e7e7e7;
-    height: 80px;
+    height: auto;
     margin: 0 28px 28px;
     text-align: right;
     padding: 0 10px;
