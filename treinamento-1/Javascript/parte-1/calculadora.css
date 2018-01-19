@@ -2,7 +2,7 @@
 
 .box-calculator {
     width: 320px;
-    border: 2px solid #e7e7e7;
+    border: 2px solid #A9A9A9;
     padding: 25px 0;
 }
 
@@ -10,7 +10,7 @@
 /* Box Display */
 
 .box-display {
-    border: 2px solid #e7e7e7;
+    border: 2px solid #A9A9A9;
     height: auto;
     margin: 0 28px 28px;
     text-align: right;
