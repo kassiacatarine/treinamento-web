@@ -4,6 +4,7 @@
     width: 320px;
     border: 2px solid #A9A9A9;
     padding: 25px 0;
+    border-radius: 5px;
 }
 
 
@@ -15,6 +16,7 @@
     margin: 0 28px 28px;
     text-align: right;
     padding: 0 10px;
+    border-radius: 5%;
 }
 
 .display-expression>p {
