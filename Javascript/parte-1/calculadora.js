@@ -1,4 +1,4 @@
-let values = [];// = [10, 3, 4, 3];
+let values = []; // = [10, 3, 4, 3];
 let roles = []; //= ['+', '-', '+'];
 let number;
 
@@ -13,7 +13,7 @@ function numberIsEmpty() {
 }
 
 function arrayIsEmpty() {
-    if (values.length != 0 && roles.length != 0){
+    if (values.length != 0 && roles.length != 0) {
         return false;
     }
     return true;
@@ -38,16 +38,16 @@ for (const btn of buttonsNumbers) {
 
 function elementClicked() {
 
-    if (numberIsEmpty() && this.value == '='){
+    if (numberIsEmpty() && this.value == '=') {
         alert("Operação Inválida! Tente Adicionar um número!");
-    }else{
-        if (!numberIsEmpty() && this.value == '='){
+    } else {
+        if (!numberIsEmpty() && this.value == '=') {
             values.push(number);
             calculateExpression();
         } else {
-            if(numberIsEmpty() && this.value != '='){
+            if (numberIsEmpty() && this.value != '=') {
                 number = this.value;
-            }else if (!numberIsEmpty() && this.value != '=') {
+            } else if (!numberIsEmpty() && this.value != '=') {
                 number += this.value;
             }
             printExpression();
@@ -120,6 +120,13 @@ function clearOperation() {
     document.getElementById('display-secondary').innerHTML = '<br>';
 }
 
+function clearNumber() {
+    if (!numberIsEmpty()) {
+        number = 0;
+        printExpression();
+        document.getElementById('display-primary').innerHTML = '<br>';
+    }
+}
 
 // CALCULATION
 
@@ -128,18 +135,18 @@ function calculateExpression() {
 
     do {
         let operator = roles.shift();
-        
-        if(operator == '+'){
-            values.unshift(sum(parseInt(values.shift()), parseInt(values.shift())));
+
+        if (operator == '+') {
+            values.unshift(sum(parseFloat(values.shift()), parseFloat(values.shift())));
         } else if (operator == '-') {
-            values.unshift(subtraction(parseInt(values.shift()), parseInt(values.shift())));
+            values.unshift(subtraction(parseFloat(values.shift()), parseFloat(values.shift())));
         } else if (operator == '*') {
-            values.unshift(multiplication(parseInt(values.shift()), parseInt(values.shift())));
+            values.unshift(multiplication(parseFloat(values.shift()), parseFloat(values.shift())));
         } else if (operator == '/') {
-            values.unshift(division(parseInt(values.shift()), parseInt(values.shift())));
+            values.unshift(division(parseFloat(values.shift()), parseFloat(values.shift())));
         }
     } while (roles.length != 0);
-    
+
     displayPrimary('= ' + values[0]);
     number = parseInt(values[0]);
     values.length = 0;

@@ -1,0 +1,102 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.wrapper>div {
+    padding: 2em;
+}
+
+.box-calculator {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-rows: 20% 80%;
+    border: 2px solid #A9A9A9;
+    border-radius: 20px;
+}
+
+.box-buttons {
+    display: grid;
+    grid-template-rows: 10% 90%;
+    text-align: center;
+    grid-row-gap: 1em;
+}
+
+.box-buttons-comuns {
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
+
+
+/* Box Display */
+
+.box-display {
+    border: 2px solid #A9A9A9;
+    text-align: right;
+    padding: 0 10px;
+    border-radius: 10%;
+}
+
+.display-expression>p {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.display-input>p {
+    font-size: 25px;
+    margin: 5px 0;
+    color: green;
+}
+
+
+/* Buttons */
+
+.btn {
+    background-color: white;
+    padding: 14px 22px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+}
+
+.btn-number {
+    background-color: white;
+    color: black;
+    border: 2px solid #e7e7e7;
+}
+
+.btn-number:hover {
+    background-color: #e7e7e7;
+}
+
+.btn-function {
+    padding: 14px 20px;
+    background-color: gray;
+    color: white;
+    border: 2px solid #505050;
+}
+
+.btn-small-function {
+    padding: 14px 22px;
+}
+
+.btn-function:hover {
+    background-color: #505050;
+}
+
+.btn-special {
+    padding: 14px 20px;
+    background-color: #D3D3D3;
+    color: black;
+    border: 2px solid #e7e7e7;
+    margin: 4px 4px;
+}
+
+.btn-clear {
+    padding: 14px 15px;
+}
+
+.btn-special:hover {
+    background-color: #DCDCDC;
+}
