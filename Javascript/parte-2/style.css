@@ -1,0 +1,25 @@
+footer {
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-family: "BT Mono bold" !important;
+    font-size: 18px;
+}
+
+.footer-copyright {
+    border-top: 1px solid gray;
+}
+
+.collection-card {
+    padding: 0 !important;
+}
+
+.icon-star {
+    margin-right: 0 !important;
+}
+
+.img-git {
+    width: 35px;
+    margin-right: 5px;
+}

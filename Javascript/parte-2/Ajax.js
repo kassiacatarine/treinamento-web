@@ -20,13 +20,13 @@ let handleGetContacts = (data) => {
                         <p>${contact.info.phone} <br>
                             ${contact.email}
                         </p>
-                        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                        <a href="#!" class="secondary-content"><i class="material-icons icon-star">grade</i></a>
                     </li>
                 `
         $('.collection').prepend(html)
     })
 
-    setTimeout(function(){$('.circular-spinner').hide()},500)    
+    setTimeout(function() { $('.circular-spinner').hide() }, 500)
 }
 
 let handleError = (err) => {
@@ -36,8 +36,8 @@ let handleError = (err) => {
 
 $(document).ready(() => {
     $(".button-collapse").sideNav();
+    $('.collapsible').collapsible();
 
-    
     $.ajax({
         method: 'GET',
         url: `${baseUrl}/contacts`,
