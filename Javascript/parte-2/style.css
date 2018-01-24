@@ -1,5 +1,8 @@
+nav {
+    font-family: 'papercraft' !important;
+}
+
 footer {
-    position: sticky;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -22,4 +25,29 @@ footer {
 .img-git {
     width: 35px;
     margin-right: 5px;
+}
+
+.tab-left {
+    padding-left: 10px !important;
+}
+
+.tab-right {
+    padding-right: 10px !important;
+}
+
+.tab-bottom {
+    padding-bottom: 15px;
+}
+
+input,
+textarea {
+    margin: 0 !important;
+}
+
+form .row {
+    margin-bottom: 15px;
+}
+
+.hide {
+    display: none;
 }
