@@ -1,12 +1,3 @@
-function successCreate() {
-    alertMessage('Criado com successo!', 'green');
-}
-
-function createErro() {
-    alertMessage('Erro ao criar contato.', 'red');
-}
-
-
 function createContact() {
     let contact = new Object();
     contact.info = new Object();
@@ -26,29 +17,26 @@ function createContact() {
 }
 
 
-function postContact(params) {
+function postContact() {
     let contact = createContact();
 
     $.ajax({
         method: 'POST',
         url: `${baseUrl}/contacts`,
         data: contact,
-        success: successCreate,
-        error: createErro,
-    })
+    }).done(function() {
+        alertMessage('Criado com successo!');
+    }).fail(function() {
+        alertMessage('Erro ao criar contato.');
+    }).always(function() {
+        getContacts();
+    });
 }
 
 
 $(document).ready(() => {
-    // CARD NEW CONTACT
-    $("#btn-cancelar").click(function() {
-        $("#card-new-contact").hide();
-    });
-
-    $('#form-contact').submit(function(e) {
-        e.preventDefault();
-        postContact();
-        $("#card-new-contact").hide();
-        getContacts();
-    });
+    // $('#form-contact').submit(function(e) {
+    //     e.preventDefault();
+    //     postContact();
+    // });
 });

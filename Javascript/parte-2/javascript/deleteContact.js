@@ -1,14 +1,21 @@
 function deleteContact() {
     $.ajax({
         method: 'DELETE',
-        url: `${baseUrl}/contacts/${id}`,
-        success: success('Contato excluído com sucesso!'),
-        error: erro('Erro ao excluir contato.'),
-    })
+        url: `${baseUrl}/contacts/${id_contact}`,
+    }).done(function() {
+        alertMessage('Excluído com successo!');
+    }).fail(function() {
+        alertMessage('Erro ao excluir contato.');
+    }).always(function() {
+        getContacts();
+    });
 }
 
-$(document).ready(() => function() {
-    $('#btn-delete').click(function() {
-
+function addEventDelete() {
+    $('.btn-delete').on('click', function() {
+        $('#comfirm-delete').click(function() {
+            deleteContact();
+            getContacts();
+        });
     });
-});
+}
