@@ -45,7 +45,7 @@
         </div>
         <div class="col s12 m4 l4 blue menu-lateral">
             <!-- Modal Trigger -->
-            <a class="waves-effect waves-light btn modal-trigger" href="#card-form-contact">Novo Contato</a>
+            <a class="waves-effect waves-light btn modal-trigger" href="#card-form-contact" onclick="clearForm();">Novo Contato</a>
 
             <!-- Modal Structure -->
             <div id="card-form-contact" class="modal">
@@ -104,7 +104,7 @@
                             </div>
                             <div class="modal-footer">
                                 <a class="modal-action modal-close waves-effect waves-green btn-flat blue-text text-darken-4">Cancelar</a>
-                                <button class="modal-action modal-close waves-effect waves-green btn-flat blue-text text-darken-4" id="btn-salvar" type="submit">Salvar</button>
+                                <button class="modal-action modal-close waves-effect waves-green btn-flat blue-text text-darken-4" id="btn-salvar" type="submit" onclick="saveForm();">Salvar</button>
                             </div>
                         </form>
                     </div>
@@ -120,7 +120,7 @@
         </div>
         <div class="modal-footer">
             <a class="modal-action modal-close waves-effect waves-green btn-flat">Não</a>
-            <a class="modal-action modal-close waves-effect waves-green btn-flat red-text" id="comfirm-delete">Sim</a>
+            <a class="modal-action modal-close waves-effect waves-green btn-flat red-text" id="comfirm-delete" onclick="deleteContact()">Sim</a>
         </div>
     </div>
 

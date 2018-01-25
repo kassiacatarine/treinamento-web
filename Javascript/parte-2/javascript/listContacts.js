@@ -4,7 +4,7 @@ function getContacts() {
         url: `${baseUrl}/contacts`,
         success: handleGetContacts,
         error: handleError
-    })
+    });
 }
 
 let handleGetContacts = (data) => {
@@ -12,9 +12,21 @@ let handleGetContacts = (data) => {
 
     if (!contacts) return false;
 
+    // contacts.sort(function(a, b) {
+    //     return (a.firstName > b.firstName) ? 1 : ((b.firstName > a.firstName) ? -1 : 0);
+    // });
+
+    listContacts(contacts);
+}
+
+function listContacts(contacts) {
+    $('#list-cards').html('');
+    $('.btn-edit').off("click");
+
     contacts.forEach((contact) => {
         let html = `
                     <li class="card-contact-unique" id="${contact._id}">
+                    
                         <div class="collapsible-header collection-card">
                             <div class="collection col s12 collection-card">
                                 <div class="collection-item avatar">
@@ -32,24 +44,17 @@ let handleGetContacts = (data) => {
                             <a class="btn-floating btn-small waves-effect waves-light secondary-content btn-delete btn modal-trigger" style="margin-left: 10px;" href="#modal-delete-contact">
                                 <i class=" small material-icons">delete</i>
                             </a>
-                            <a class="btn-floating btn-small waves-effect waves-light secondary-content btn-edit btn modal-trigger" href="#card-form-contact"><i class=" small material-icons">edit</i></a>
+                            <a class="btn-floating btn-small waves-effect waves-light secondary-content btn-edit btn modal-trigger" href="#card-form-contact"><i class="small material-icons">edit</i></a>
                             <i class="tiny material-icons tab-bottom">work</i><span class="tab-left">${contact.info.company}</span><br>
                             <i class="tiny material-icons tab-bottom">home</i><span class="tab-left">${contact.info.address}</span><br>
                             <i class="tiny material-icons tab-bottom">comment</i><span class="tab-left">${contact.info.comments}</span><br>
                         </div>
                     </li>
                 `;
-        $('#list-cards').prepend(html);
-
-        // let htmlMenu = `
-        //                 <a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Editar</a><br>
-        //                 <a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Excluir</a>
-        //                 `
-        // $('#menu-cards').prepend(htmlMenu);
+        $('#list-cards').append(html);
     });
     addEventGetId();
     addEventUpdate();
-    addEventDelete();
 }
 
 let handleError = (err) => {

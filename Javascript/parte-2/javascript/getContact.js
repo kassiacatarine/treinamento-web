@@ -10,12 +10,14 @@ function addEventGetId() {
 }
 
 function getContactById() {
+    $.ajaxSetup({ async: false });
     $.ajax({
         method: 'GET',
         url: `${baseUrl}/contacts/${id_contact}`,
         success: getContact,
         error: getContactErro,
     });
+    $.ajaxSetup({ async: true });
 }
 
 function getContact(data) {
@@ -26,28 +28,3 @@ function getContact(data) {
 function getContactErro(err) {
     console.log(`Erro ao buscar contatos --> status: ${err.status}`);
 }
-
-// let getContact = (data) => {
-//     let contact = data;
-
-//     if (!contact) return false;
-//     let html = `
-
-//                 `
-//     $('').prepend(html);
-// }
-
-// let getContactErro = (err) => {
-//     console.log(`Erro ao buscar contatos --> status: ${err.status}`)
-// }
-
-// $(document).ready(() => {
-//     $.ajax({
-//         method: 'GET',
-//         url: `${baseUrl}/contacts/`,
-//         success: getContact,
-//         error: getContactErro,
-//     })
-
-//     console.log(addEventGetId());
-// });
