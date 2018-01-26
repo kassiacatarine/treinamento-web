@@ -6,27 +6,36 @@ function alertMessage(message) {
     Materialize.toast(message, 5000);
 }
 
-// function disabledButton() {
-//     if ($("#firstName").val() == "" || $("#lastName").val() == "" || $("#email").val() == "") {
-//         $('#btn-salvar').prop('disabled', 'disabled')
-//     } else if ($("#firstName").val() != "" && $("#lastName").val() != "" && $("#email").val() != "") {
-//         $('#btn-salvar').prop('disabled', false)
-//     }
-// }
-
-
-
-
 $(document).ready(() => {
     $(".button-collapse").sideNav();
     $('.collapsible').collapsible();
     $('#textarea-comment').trigger('autoresize');
     $('.modal').modal();
-    $('.alerta').hide();
+    $('select').material_select();
     $(".tabs>li>a").css("color", 'teal');
     $(".tabs>.indicator").css("background-color", 'teal');
 
     getContacts();
+
+    $('.options').click(function() {
+        $('#search-field').slideUp("slow");
+        $('#drop-type').slideUp('slow');
+    });
+
+    $('#search').click(function() {
+        $('#search-field').slideDown("slow");
+        $('#drop-type').slideDown("fast");
+        $('#search-field').removeClass("hide");
+        $('#drop-type').removeClass("hide");
+    });
+
+    $('#input-search').click(function() {
+        searchContact();
+    });
+
+    $('#type-search').click(function() {
+
+    });
 });
 
 
@@ -76,4 +85,21 @@ function saveForm() {
         }
         $('form').data("type-form", "");
     });
+}
+
+
+function searchContact() {
+    let word = $('#input-search').val();
+    let type = $('#type-search option:selected').val() != "" ? $('#type-search option:selected').val() : alertMessage('Tipo da pesquisa vazio, selecione algum tipo.')
+    word != "" ? search(type, word) : alertMessage('Pesquisa vazia, digite algo.');
+}
+
+function search(type, word) {
+    $.ajax({
+        method: 'GET',
+        url: `${baseUrl}/contacts?${type}=${word}`,
+        success: getContact,
+    }).fail(function() {
+        alertMessage('Nenhum contato encontrado.');
+    })
 }

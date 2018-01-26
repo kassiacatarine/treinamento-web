@@ -41,23 +41,43 @@
         <!-- Content -->
         <div class="col s12 m8">
             <div class="conteiner">
-                <nav class="cyan lighten-3" id="search-field">
-                    <div class="nav-wrapper">
-                        <form>
-                            <div class="input-field">
-                                <input id="search" type="search" required>
-                                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                                <i class="material-icons">close</i>
-                            </div>
-                        </form>
-                    </div>
-                </nav>
+                <!-- Tab Opções -- Inicio -->
                 <ul id="tabs-swipe-demo" class="tabs tabs-fixed-width">
-                    <li class="tab col s3"><a><i class="material-icons">search</i> Pesquisar</a></li>
-                    <li class="tab col s3"><a class="active" href="#list-cards">Todos Contatos</a></li>
-                    <li class="tab col s3"><a>Favoritos</a></li>
-                    <li class="tab col s3 disabled"><a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Funcionalidade Indisponível">Mensagens</a></li>
+                    <li class="tab col s3" id="search"><a><i class="material-icons">search</i> Pesquisar</a></li>
+                    <li class="tab col s3 options"><a class="active" href="#list-cards">Todos Contatos</a></li>
+                    <li class="tab col s3 options"><a>Favoritos</a></li>
+                    <li class="tab col s3 disabled"><a class="tooltipped" data-position="right" data-delay="50" data-tooltip="Funcionalidade Indisponível">Mensagens</a></li>
                 </ul>
+                <!-- Tab Opções -- FIM -->
+                <div class="row">
+                    <div class="col s9">
+                        <!-- Campo de Pesquisa -- Inicio -->
+                        <nav class="cyan lighten-3 hide" id="search-field">
+                            <div class="nav-wrapper">
+                                <form>
+                                    <div class="input-field">
+                                        <input id="input-search" type="search" required>
+                                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                                        <i class="material-icons">close</i>
+                                    </div>
+                                </form>
+                            </div>
+                        </nav>
+                        <!-- Campo Pesquisa -- FIM -->
+                    </div>
+                    <div class="col s3">
+                        <!-- DropDown Options Pesquisa -- Inicio -->
+                        <div class="input-field col s12 hide" id="drop-type">
+                            <select id="type-search">
+                                <option value="" selected>Tipo da pesquisa</option>
+                                <option value="name">Nome</option>
+                                <option value="email">Email</option>
+                            </select>
+                            <label>Pesquisar por</label>
+                        </div>
+                        <!-- DropDown Options Pesquisa -- Fim -->
+                    </div>
+                </div>
                 <ul class="collapsible popout" data-collapsible="accordion" id="list-cards">
                 </ul>
             </div>
