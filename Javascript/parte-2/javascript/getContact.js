@@ -23,6 +23,7 @@ function getContactById() {
 function getContact(data) {
     if (!data) return;
     contact_search = data;
+    debugger
 }
 
 function getContactErro(err) {

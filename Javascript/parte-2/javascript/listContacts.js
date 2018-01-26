@@ -1,7 +1,7 @@
 function getContacts() {
     $.ajax({
         method: 'GET',
-        url: `${baseUrl}/contacts`,
+        url: `${baseUrl}/contacts?limit=1000`,
         success: handleGetContacts,
         error: handleError
     });
@@ -22,11 +22,9 @@ let handleGetContacts = (data) => {
 function listContacts(contacts) {
     $('#list-cards').html('');
     $('.btn-edit').off("click");
-
     contacts.forEach((contact) => {
         let html = `
                     <li class="card-contact-unique" id="${contact._id}">
-                    
                         <div class="collapsible-header collection-card">
                             <div class="collection col s12 collection-card">
                                 <div class="collection-item avatar">
@@ -36,7 +34,7 @@ function listContacts(contacts) {
                                         <i class="tiny material-icons">phone</i>${contact.info.phone} <br>
                                         <i class="tiny material-icons">email</i>${contact.email}
                                     </p>
-                                    <a class="secondary-content"><i class="material-icons icon-star">grade</i></a>
+                                    <a class="secondary-content"><i class="small material-icons favorito">${colorStar(contact)}</i></a>
                                 </div>
                             </div>
                         </div>
@@ -52,11 +50,39 @@ function listContacts(contacts) {
                     </li>
                 `;
         $('#list-cards').append(html);
+        insertIndex(contact);
+        colorStar(contact);
     });
     addEventGetId();
     addEventUpdate();
+    addEventFavorite();
 }
 
 let handleError = (err) => {
     console.log(`Erro ao buscar contatos --> status: ${err.status}`)
+}
+
+function insertIndex(contact) {
+    if (checkNewLetter(contact) != true) {
+        let htmlIndex = `
+                <div class="row index">
+                    <div class="col s12 light-blue-text text-accent-4">
+                        <h4 class="text-index">${letters[letters.length -1]}</h4>
+                        <div class="divider light-blue darken-3"></div>
+                    </div>
+                </div>
+                `;
+        $('#' + contact._id).before(htmlIndex);
+    }
+}
+
+
+function colorStar(contact) {
+    return contact.isFavorite ? 'star' : 'star_border';
+}
+
+function addEventFavorite() {
+    $('.favorito').on('click', function() {
+        starContact();
+    })
 }

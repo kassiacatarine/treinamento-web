@@ -22,6 +22,9 @@ $(document).ready(() => {
     $('.collapsible').collapsible();
     $('#textarea-comment').trigger('autoresize');
     $('.modal').modal();
+    $('.alerta').hide();
+    $(".tabs>li>a").css("color", 'teal');
+    $(".tabs>.indicator").css("background-color", 'teal');
 
     getContacts();
 });

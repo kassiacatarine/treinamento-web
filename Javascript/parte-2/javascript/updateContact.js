@@ -37,12 +37,14 @@ function putContact(contact) {
 }
 
 
-function starContact(contact) {
+function starContact() {
+    getContactById();
+    contact_search.isFavorite = contact_search.isFavorite ? false : true;
     $.ajax({
         method: 'PUT',
         url: `${baseUrl}/contacts/${id_contact}`,
-        data: contact,
-        success: colorstar,
+        data: contact_search,
+        success: getContacts,
         erro: function() { alertMessage('Erro ao atualizar o fovorito do contato.'); },
     });
 }
