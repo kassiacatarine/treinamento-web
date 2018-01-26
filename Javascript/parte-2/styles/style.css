@@ -28,7 +28,7 @@ footer {
 }
 
 .tab-left {
-    padding-left: 10px !important;
+    padding-left: 40px !important;
 }
 
 .tab-right {
@@ -46,4 +46,24 @@ textarea {
 
 form .row {
     margin-bottom: 15px;
+}
+
+.full {
+    position: absolute;
+    top: 0;
+    right: 0 !important;
+    z-index: 11;
+    width: 100%;
+    height: 100%;
+    opacity: .50;
+    filter: alpha(opacity=65);
+    border-left: 2px solid #90a4ae;
+}
+
+.bagde-link {
+    position: fixed;
+    width: 453px;
+    bottom: 0;
+    right: 0;
+    border-top: 2px solid #90a4ae;
 }

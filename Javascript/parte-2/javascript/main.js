@@ -22,14 +22,8 @@ $(document).ready(() => {
     $('.collapsible').collapsible();
     $('#textarea-comment').trigger('autoresize');
     $('.modal').modal();
-    $('.alerta').hide();
 
     getContacts();
-    $('.btn-edit').on('click', function() {
-        debugger
-        getContacts();
-        setValuesForm();
-    });
 });
 
 
@@ -59,20 +53,24 @@ function clearForm() {
             $('#' + inputs[i].id).prop('checked', false);
         }
     }
-    Materialize.updateTextFields();
+
 }
 
 function saveForm() {
     $('#form-contact').submit(function(e) {
+        console.log(e);
+
         e.preventDefault();
+        console.log(e);
+
         if ($('form').data("type-form") == 'put') {
-            let contact = setValuesContact(contact_search);
-            putContact(contact);
-        } else {
+            putContact(setValuesContact(contact_search));
+        } else if ($('form').data("type-form") == 'post') {
             let contact = new Object();
             contact.info = new Object();
 
             postContact(setValuesContact(contact));
         }
+        $('form').data("type-form", "");
     });
 }

@@ -1,5 +1,5 @@
 function addEventUpdate() {
-
+    $('.btn-edit').on('click', setValuesForm);
 }
 
 function setValuesForm() {
@@ -22,6 +22,7 @@ function setValuesForm() {
 }
 
 function putContact(contact) {
+
     $.ajax({
         method: 'PUT',
         url: `${baseUrl}/contacts/${contact._id}`,
@@ -29,6 +30,7 @@ function putContact(contact) {
         success: function() {
             alertMessage('Contato atualizado com sucesso!');
             getContacts();
+
         },
         erro: function() { alertMessage('Erro ao atualizar contato.'); },
     });

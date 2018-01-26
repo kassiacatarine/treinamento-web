@@ -1,4 +1,5 @@
 function postContact(contact) {
+
     $.ajax({
         method: 'POST',
         url: `${baseUrl}/contacts`,
