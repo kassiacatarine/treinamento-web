@@ -9,7 +9,6 @@ let searchContact = (data) => {
     //             `
     // $('').prepend(html);
 
-    console.log("ali" + contact);
 }
 
 let searchContactErro = (err) => {
@@ -17,7 +16,6 @@ let searchContactErro = (err) => {
 }
 
 $(document).ready(() => {
-    console.log('aqui');
 
     $.ajax({
         method: 'GET',

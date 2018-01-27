@@ -1,5 +1,4 @@
 let baseUrl = 'http://localhost:3000/v1';
-let contacts = [];
 
 
 function alertMessage(message) {
@@ -15,7 +14,9 @@ $(document).ready(() => {
     $(".tabs>li>a").css("color", 'teal');
     $(".tabs>.indicator").css("background-color", 'teal');
 
-    getContacts();
+    // $('#comfirm-delete').on('click', function() {
+    //     deleteContact($(this).data('id'));
+    // });
 
     $('.options').click(function() {
         $('#search-field').slideUp("slow");
@@ -33,30 +34,18 @@ $(document).ready(() => {
         searchContact();
     });
 
-    $('#type-search').click(function() {
-
+    $('#new-contact').click(function() {
+        clearForm();
     });
+    getAllContacts();
+    saveForm();
 });
 
 
-function setValuesContact(contact) {
-
-    contact.firstName = $("#first_name").val();
-    contact.lastName = $("#last_name").val();
-    contact.email = $("#email").val();
-    contact.gender = $("input[name='sexo']:checked").val();
-    contact.info.avatar = "https://api.adorable.io/avatars/285/abott@adorable.png";
-    contact.info.company = $("#empresa").val();
-    contact.info.address = $("#endereco").val();
-    contact.info.phone = $("#telefone").val();
-    contact.info.comments = $("#comments").val();
-    contact.isFavorite = false;
-
-    return contact;
-}
 
 function clearForm() {
     $('#form-contact').data("type-form", "post");
+    debugger
     let inputs = $('textarea, input');
     for (var i = 0; i < inputs.length; i++) {
         if (inputs[i].type == 'text' || inputs[i].type == 'email' || inputs[i].type == 'textarea') {
@@ -65,25 +54,20 @@ function clearForm() {
             $('#' + inputs[i].id).prop('checked', false);
         }
     }
-
 }
 
 function saveForm() {
     $('#form-contact').submit(function(e) {
-        console.log(e);
-
         e.preventDefault();
-        console.log(e);
-
-        if ($('form').data("type-form") == 'put') {
-            putContact(setValuesContact(contact_search));
-        } else if ($('form').data("type-form") == 'post') {
+        debugger
+        if ($('#form-contact').data("type-form") == 'put') {
+            putContact(editContact(getContactById($('form').data('id'))));
+        } else if ($('#form-contact').data("type-form") == 'post') {
             let contact = new Object();
             contact.info = new Object();
-
-            postContact(setValuesContact(contact));
+            debugger
+            postContact(editContact(contact));
         }
-        $('form').data("type-form", "");
     });
 }
 

@@ -76,18 +76,3 @@ form .row {
     right: 0;
     border-top: 2px solid #90a4ae;
 }
-
-
-/* Large Devices, Wide Screens */
-
-@media only screen and (min-width: 1200px) {
-    .bagde-link {
-        min-width: 503px;
-    }
-}
-
-@media only screen and (max-width: 992px) {
-    .full {
-        display: none;
-    }
-}

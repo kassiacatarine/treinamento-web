@@ -1,10 +1,14 @@
 function addEventUpdate() {
-    $('.btn-edit').on('click', setValuesForm);
+    $('.btn-edit').on('click', function() {
+        $('form').data('id', $(this).data('id'));
+        setValuesForm(getContactById($('form').data('id')));
+    });
+    $('.favorito').on('click', function() {
+        putStarContact(setStar(getContactById($(this).data('id'))));
+    });
 }
 
-function setValuesForm() {
-    getContactById();
-    let contact = contact_search;
+function setValuesForm(contact) {
 
     $('form').data("type-form", "put");
     $("#first_name").attr('value', contact.firstName);
@@ -21,30 +25,37 @@ function setValuesForm() {
     Materialize.updateTextFields();
 }
 
-function putContact(contact) {
 
+function setStar(contact) {
+    contact.isFavorite = contact.isFavorite ? false : true;
+
+    return contact;
+}
+
+function putContact(contact) {
     $.ajax({
         method: 'PUT',
         url: `${baseUrl}/contacts/${contact._id}`,
         data: contact,
-        success: function() {
-            alertMessage('Contato atualizado com sucesso!');
-            getContacts();
-
-        },
-        erro: function() { alertMessage('Erro ao atualizar contato.'); },
+    }).done(function() {
+        alertMessage('Contato atualizado com sucesso!');
+        listContacts(contacts);
+    }).fail(function() {
+        alertMessage('Erro ao atualizar contato.');
+    }).always(function() {
+        $('form').data('id', '');
     });
 }
 
 
-function starContact() {
-    getContactById();
-    contact_search.isFavorite = contact_search.isFavorite ? false : true;
+function putStarContact(contact) {
     $.ajax({
         method: 'PUT',
-        url: `${baseUrl}/contacts/${id_contact}`,
-        data: contact_search,
-        success: getContacts,
-        erro: function() { alertMessage('Erro ao atualizar o fovorito do contato.'); },
+        url: `${baseUrl}/contacts/${contact._id}`,
+        data: contact,
+    }).done(function() {
+        editColorStar(contact);
+    }).fail(function() {
+        alertMessage('Erro ao atualizar o favorito do contato.');
     });
 }
