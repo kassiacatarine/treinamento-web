@@ -5,11 +5,46 @@ function postContact(contact) {
         data: contact,
     }).done(function() {
         alertMessage('Contato criado com successo!');
-        contacts.push(contact);
-        listContacts(contacts);
+        getAllContacts();
     }).fail(function() {
         alertMessage('Erro ao criar contato.');
-    }).always(function() {
-        $('#form-contact').data("type-form", "");
-    })
+    });
 }
+
+
+function clearForm() {
+    $('#form-contact').data("type-form", "post");
+    let inputs = $('textarea, input');
+    for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].type == 'text' || inputs[i].type == 'email' || inputs[i].type == 'textarea') {
+            inputs[i].value = '';
+        } else if (inputs[i].type == 'radio') {
+            $('#' + inputs[i].id).prop('checked', false);
+        }
+    }
+}
+
+
+function saveForm() {
+    $('#form-contact').submit(function(e) {
+        e.preventDefault();
+        debugger
+        if ($('#form-contact').data("type-form") == 'put') {
+            putContact(editContact(getContactById($('#form-contact').data('id'))));
+        } else if ($('#form-contact').data("type-form") == 'post') {
+            let contact = new Object();
+            contact.info = new Object();
+            postContact(editContact(contact));
+        }
+        $('#form-contact').data("type-form", "");
+        $('#form-contact').data("id", "");
+    });
+}
+
+$(document).ready(() => {
+    // Limpa modal e adiciona method post
+    $('#new-contact').click(function() {
+        clearForm();
+    });
+    saveForm();
+});

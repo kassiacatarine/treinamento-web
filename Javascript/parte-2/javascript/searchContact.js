@@ -1,26 +1,59 @@
-let query = 'firstName=Cecília'
+let input = $('#input-search'),
+    saida = $('#list-cards-search');
 
-let searchContact = (data) => {
-    let contact = data;
+let DURACAO_DIGITACAO = 400,
+    digitando = false,
+    tempoUltimaDigitacao;
 
-    if (!contact) return false;
-    // let html = `
 
-    //             `
-    // $('').prepend(html);
+function atualiza() {
+
+    if (!digitando) {
+        digitando = true;
+        saida.html('procurando...');
+    }
+
+    tempoUltimaDigitacao = (new Date()).getTime();
+
+    setTimeout(function() {
+
+        var digitacaoTempo = (new Date()).getTime();
+        var diferencaTempo = digitacaoTempo - tempoUltimaDigitacao;
+
+        if (diferencaTempo >= DURACAO_DIGITACAO && digitando) {
+            digitando = false;
+            saida.html('exibe resultado...');
+            let contactsSearch = searchContact(input.val());
+            listAllSearch(contactsSearch);
+        }
+
+    }, DURACAO_DIGITACAO);
 
 }
 
-let searchContactErro = (err) => {
-    console.log(`Erro ao buscar contatos --> status: ${err.status}`)
+
+function searchContact(word) {
+    if (word !== '') {
+        return contacts.filter(function(item) {
+            return item.firstName.indexOf(word) !== -1 || item.lastName.indexOf(word) !== -1 || item.email.indexOf(word) !== -1;
+        });
+    }
 }
+
 
 $(document).ready(() => {
+    // Evento para o search
+    $('.options').click(function() {
+        $('#search-field').slideUp("slow");
+    });
 
-    $.ajax({
-        method: 'GET',
-        url: `${baseUrl}/contacts${query}`,
-        success: searchContact,
-        error: searchContactErro,
-    })
+    // Evento para o search
+    $('#search').click(function() {
+        $('#search-field').slideDown("slow");
+        $('#search-field').removeClass("hide");
+    });
+
+    input.on('input', function() {
+        atualiza();
+    });
 });

@@ -26,37 +26,29 @@
                 </div>
             </nav>
         </div>
-
-        <!-- Navbar side
-        <ul id="slide-out" class="side-nav fixed right-aligned">
-            <li><a href="#!">First Sidebar Link</a></li>
-            <li><a href="#!">Second Sidebar Link</a></li>
-            <li><a><i class="material-icons">search</i></a></li>
-        </ul> -->
     </header>
 
 
     <!-- Content -->
     <div class="row">
         <!-- Content -->
-        <div class="col s10 m8">
+        <div class="col m8 offset-m2 s12 z-depth-1">
             <div class="conteiner">
                 <!-- Tab Opções -- Inicio -->
                 <ul id="tabs-swipe-demo" class="tabs tabs-fixed-width">
-                    <li class="tab col s3" id="search"><a href="#"><i class="material-icons">search</i> Pesquisar</a></li>
-                    <li class="tab col s3 options"><a class="active" href="#list-cards">Todos Contatos</a></li>
-                    <li class="tab col s3 options"><a href="#">Favoritos</a></li>
-                    <li class="tab col s3 disabled"><a class="tooltipped" data-position="right" data-delay="50" data-tooltip="Funcionalidade Indisponível">Mensagens</a></li>
+                    <li class="tab col s4" id="search"><a href="#list-cards-search"><i class="material-icons">search</i> Pesquisar</a></li>
+                    <li class="tab col s4 options" id="all-list"><a class="active" href="#list-cards">Todos Contatos</a></li>
+                    <li class="tab col s4 options" id="favorite-list"><a href="#list-cards-favorite">Favoritos</a></li>
                 </ul>
                 <!-- Tab Opções -- FIM -->
                 <div class="row">
-                    <div class="col s9">
+                    <div class="col s12">
                         <!-- Campo de Pesquisa -- Inicio -->
                         <nav class="cyan lighten-3 hide" id="search-field">
                             <div class="nav-wrapper">
                                 <form>
                                     <div class="input-field">
-                                        <input id="input-search" type="search" required>
+                                        <input id="input-search" type="search" placeholder="Digite um nome ou email..." required>
                                         <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                                         <i class="material-icons">close</i>
                                     </div>
@@ -65,41 +57,30 @@
                         </nav>
                         <!-- Campo Pesquisa -- FIM -->
                     </div>
-                    <div class="col s3">
-                        <!-- DropDown Options Pesquisa -- Inicio -->
-                        <div class="input-field col s12 hide" id="drop-type">
-                            <select id="type-search">
-                                <option value="" selected>Tipo da pesquisa</option>
-                                <option value="name">Nome</option>
-                                <option value="email">Email</option>
-                            </select>
-                            <label>Pesquisar por</label>
-                        </div>
-                        <!-- DropDown Options Pesquisa -- Fim -->
-                    </div>
                 </div>
                 <ul class="collapsible popout" data-collapsible="accordion" id="list-cards">
                 </ul>
-            </div>
-        </div>
-        <div class="col s2 m4 menu-lateral light-blue lighten-3 full z-depth-3">
-            <div class="row">
-                <div class="col s2 offset-s10">
-                    <h2>menu</h2>
-                </div>
-            </div>
-            <!-- Modal Trigger -->
-            <a class="waves-effect waves-light btn modal-trigger" href="#card-form-contact" id="new-contact">Novo Contato</a>
-            <div class="bagde-link blue-grey lighten-5 z-depth-4">
-                <a href="https://github.com/kassiacatarine/treinamento-web">
-                    <img class="left" src="data:image/png;base64,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">
-                    <h5 class="center">Ir Para o Repositório</h5>
-                </a>
+                <ul class="collapsible popout" data-collapsible="accordion" id="list-cards-favorite">
+                </ul>
+                <ul class="collapsible popout" data-collapsible="accordion" id="list-cards-search">
+                </ul>
             </div>
         </div>
     </div>
 
 
+    <!-- MENU -->
+    <div class="fixed-action-btn toolbar">
+        <a class="btn-floating btn-large light-blue accent-4">
+            <i class="large material-icons">menu</i>
+        </a>
+        <ul>
+            <li class="waves-effect waves-light"><a href="#list-cards"><i class="material-icons">home</i></a></li>
+            <li class="waves-effect waves-light modal-trigger" href="#card-form-contact" id="new-contact"><a><i class="material-icons">person_add</i></a></li>
+            <li class="waves-effect waves-light"><a href="#!"><i class="material-icons">file_download</i></a></li>
+            <li class="waves-effect waves-light"><a class="modal-trigger" href="#modal-about"><i class="material-icons">help_outline</i></a></li>
+        </ul>
+    </div>
 
     <!-- Modal Structure Form -->
     <div id="card-form-contact" class="modal">
@@ -152,13 +133,19 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <textarea id="comments" class="materialize-textarea" data-length="120"></textarea>
+                            <input id="image" type="text" class="validate" placeholder="https://">
+                            <label for="image">Foto</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="comments" class="materialize-textarea" data-length="200"></textarea>
                             <label for="comments">Comentário</label>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <a class="modal-action modal-close waves-effect waves-green btn-flat blue-text text-darken-4">Cancelar</a>
-                        <button class="modal-action modal-close waves-effect waves-green btn-flat blue-text text-darken-4" id="btn-salvar" type="submit">Salvar</button>
+                        <button class="modal-action modal-close waves-effect waves-green btn-flat blue-text text-darken-4" id="btn-salvar" type="submit" onclick="saveForm();">Salvar</button>
                     </div>
                 </form>
             </div>
@@ -167,16 +154,27 @@
 
 
     <!-- Modal Structure Message Confirm -->
-    <div id="modal-delete-contact" class="modal" style="width: 40%;">
+    <div id="modal-delete-contact" class="modal" style="width: 30%;">
         <div class="modal-content">
             <h6>Tem certeza que deseja excluir esse contato?</h6>
         </div>
         <div class="modal-footer">
             <a class="modal-action modal-close waves-effect waves-green btn-flat">Não</a>
-            <a class="modal-action modal-close waves-effect waves-green btn-flat red-text" id="comfirm-delete" onclick="deleteContact($(this).data('id'));">Sim</a>
+            <a class="modal-action modal-close waves-effect waves-green btn-flat red-text" id="comfirm-delete">Sim</a>
         </div>
     </div>
 
+
+    <!-- Modal Structure About -->
+    <div id="modal-about" class="modal">
+        <div class="modal-content">
+            <h4>Sobre</h4>
+            <p>Projeto desenvolvido no programa de estagio do Grupo Forlogic, com o objetivo de desenvolver habilidades com a linguagem de programação Javascript, sua biblioteca JQuery, utilizando o Ajax para realizar requisições.</p>
+        </div>
+        <div class="modal-footer">
+            <a class="modal-action modal-close waves-effect waves-green btn-flat">Entendi</a>
+        </div>
+    </div>
 
     <!--Import jQuery before materialize.js-->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -189,6 +187,7 @@
     <script type="text/javascript" src="../javascript/updateContact.js"></script>
     <script type="text/javascript" src="../javascript/organizer.js"></script>
     <script type="text/javascript" src="../javascript/managerContact.js"></script>
+    <script type="text/javascript" src="../javascript/searchContact.js"></script>
 </body>
 
 </html>

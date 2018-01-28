@@ -17,7 +17,8 @@ function successMessage(data) {
     data.forEach(c => {
         contacts.push(sanitizer(c));
     });
-    listContacts(contacts);
+    listCardContacts(contacts);
+    listAllFavorite(contacts);
 }
 
 

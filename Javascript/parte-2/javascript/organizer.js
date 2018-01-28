@@ -1,5 +1,11 @@
 let letters = [];
 
+
+function alertMessage(message) {
+    Materialize.toast(message, 5000);
+}
+
+
 function checkNewLetter(contact) {
 
     let letter = contact.firstName.charAt(0).toUpperCase();
@@ -22,22 +28,22 @@ function sanitizer(c) {
     let contact = new Object();
     contact.info = new Object();
 
+    contact.info.avatar = c.info.avatar;
+    contact.info.company = valideAtributo(c.info.company);
+    contact.info.address = valideAtributo(c.info.address);
+    contact.info.phone = valideAtributo(c.info.phone);
+    contact.info.comments = valideAtributo(c.info.comments);
     contact._id = c._id;
     contact.firstName = valideAtributo(c.firstName);
     contact.lastName = valideAtributo(c.lastName);
     contact.email = valideAtributo(c.email);
     contact.gender = valideAtributo(c.gender);
-
     if (!!c.isFavorite) contact.isFavorite = c.isFavorite === false || c.isFavorite === 'false' ? false : true;
 
-    contact.info.avatar = valideAtributo(c.info.avatar);
-    contact.info.company = valideAtributo(c.info.company);
-    contact.info.address = valideAtributo(contact.info.address);
-    contact.info.phone = valideAtributo(c.info.phone);
-    contact.info.comments = valideAtributo(c.info.comments);
 
     return contact;
 }
+
 
 function valideAtributo(atributo) {
     if (!!atributo) {
