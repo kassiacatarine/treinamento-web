@@ -28,7 +28,6 @@ function clearForm() {
 function saveForm() {
     $('#form-contact').submit(function(e) {
         e.preventDefault();
-        debugger
         if ($('#form-contact').data("type-form") == 'put') {
             putContact(editContact(getContactById($('#form-contact').data('id'))));
         } else if ($('#form-contact').data("type-form") == 'post') {
@@ -38,13 +37,41 @@ function saveForm() {
         }
         $('#form-contact').data("type-form", "");
         $('#form-contact').data("id", "");
+        clearForm();
     });
 }
+
+
+function verifyInputRequire() {
+    if ($('#fist_name').val() !== '' && $('#last_name').val() !== '' && $('#email').val() !== '') {
+        $('#btn-salvar').removeClass("disabled");
+    } else {
+        $('#btn-salvar').addClass("disabled");
+    }
+}
+
 
 $(document).ready(() => {
     // Limpa modal e adiciona method post
     $('#new-contact').click(function() {
         clearForm();
     });
+
+    $('.require').on('keyup select change', function() {
+        verifyInputRequire();
+    });
+
+    $('textarea, input').change(function() {
+        if ($('#form-contact').data('type-form') === 'put') {
+            verifyInputRequire();
+        }
+    })
+
+    $('#btn-cancel-form').click(function() {
+        clearForm();
+        $('#btn-salvar').addClass("disabled");
+    });
+
+
     saveForm();
 });

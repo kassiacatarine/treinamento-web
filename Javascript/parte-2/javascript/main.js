@@ -11,4 +11,8 @@ $(document).ready(() => {
     $(".tabs>.indicator").css("background-color", '#03a9f4');
 
     getAllContacts();
+
+    $('#home').click(function() {
+        window.location.reload(true);
+    })
 });

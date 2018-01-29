@@ -19,6 +19,7 @@ function successMessage(data) {
     });
     listCardContacts(contacts);
     listAllFavorite(contacts);
+    atualiza();
 }
 
 

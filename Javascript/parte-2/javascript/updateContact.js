@@ -10,14 +10,13 @@ $(document).on('click', '.btn-edit', function() {
 
 
 function setValuesForm(contact) {
-
     $('#form-contact').data("type-form", "put");
-    $("#first_name").attr('value', contact.firstName);
-    $("#last_name").attr('value', contact.lastName);
-    $("#email").attr('value', contact.email);
-    $("#empresa").attr('value', contact.info.company);
-    $("#endereco").attr('value', contact.info.address);
-    $("#telefone").attr('value', contact.info.phone);
+    $("#first_name").val(contact.firstName);
+    $("#last_name").val(contact.lastName);
+    $("#email").val(contact.email);
+    $("#empresa").val(contact.info.company);
+    $("#endereco").val(contact.info.address);
+    $("#telefone").val(contact.info.phone);
     $("#comments").val(contact.info.comments);
     $('#image').val(contact.info.avatar);
     contact.gender == 'f' ? $('#feminino').prop('checked', true) : $('#masculino').prop('checked', true);

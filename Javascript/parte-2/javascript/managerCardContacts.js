@@ -59,13 +59,17 @@ function listCardContacts(contacts) {
     $('#list-cards').html('');
     ordernize(contacts);
     letters = [];
-    contacts.forEach((contact) => {
-        $('#list-cards').append(insertInformationsCard(contact));
-        let index = insertIndex(contact);
-        if (!!index) {
-            $('#list-cards>li[data-id= ' + contact._id + ']').before(index);
-        }
-    });
+    if (contacts.length == 0) {
+        $('#list-cards').append(noContacts('import_contacts', 'Você ainda não possui nenhum contato.'));
+    } else {
+        contacts.forEach((contact) => {
+            $('#list-cards').append(insertInformationsCard(contact));
+            let index = insertIndex(contact);
+            if (!!index) {
+                $('#list-cards>li[data-id= ' + contact._id + ']').before(index);
+            }
+        });
+    }
 }
 
 
@@ -77,13 +81,17 @@ function listAllFavorite(contacts) {
     $('#list-cards-favorite').html('');
     ordernize(contactsFavorites);
     letters = [];
-    contactsFavorites.forEach((contact) => {
-        $('#list-cards-favorite').append(insertInformationsCard(contact));
-        let index = insertIndex(contact);
-        if (!!index) {
-            $('#list-cards-favorite>li[data-id= ' + contact._id + ']').before(index);
-        }
-    });
+    if (contacts.length == 0) {
+        $('#list-cards-favorite').append(noContacts('import_contacts', 'Você ainda não possui nenhum contato favorito.'));
+    } else {
+        contactsFavorites.forEach((contact) => {
+            $('#list-cards-favorite').append(insertInformationsCard(contact));
+            let index = insertIndex(contact);
+            if (!!index) {
+                $('#list-cards-favorite>li[data-id= ' + contact._id + ']').before(index);
+            }
+        });
+    }
 }
 
 function listAllSearch(contacts) {
@@ -94,7 +102,21 @@ function listAllSearch(contacts) {
     $('#list-cards-search').html('');
     ordernize(contactsSearch);
     letters = [];
-    contactsSearch.forEach((contact) => {
-        $('#list-cards-search').append(insertInformationsCard(contact));
-    });
+    if (contacts.length == 0) {
+        $('#list-cards-search').append(noContacts('person_pin', 'Nenhum contato encontrado na pesquisa.'));
+    } else {
+        contactsSearch.forEach((contact) => {
+            $('#list-cards-search').append(insertInformationsCard(contact));
+        });
+    }
+}
+
+
+function noContacts(icon, message) {
+    let html = `<div class="center-align blue-grey-text text-darken-2" style="margin: 200px 0;">
+                    <i class="large material-icons" id="img-not-found">${icon}</i>
+                    <h6>${message}</h6>
+                </div>
+                `;
+    return html;
 }

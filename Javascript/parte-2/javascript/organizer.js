@@ -38,8 +38,7 @@ function sanitizer(c) {
     contact.lastName = valideAtributo(c.lastName);
     contact.email = valideAtributo(c.email);
     contact.gender = valideAtributo(c.gender);
-    if (!!c.isFavorite) contact.isFavorite = c.isFavorite === false || c.isFavorite === 'false' ? false : true;
-
+    contact.isFavorite = c.isFavorite === false || c.isFavorite === 'false' ? false : true;
 
     return contact;
 }

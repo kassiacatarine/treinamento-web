@@ -8,6 +8,7 @@ function deleteContact(id) {
         alertMessage('Contato excluído com successo!');
         listCardContacts(contacts);
         listAllFavorite(contacts);
+        atualiza();
     }).fail(function() {
         alertMessage('Erro ao excluir contato.');
     }).always(function() {

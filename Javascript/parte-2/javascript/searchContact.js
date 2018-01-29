@@ -10,7 +10,9 @@ function atualiza() {
 
     if (!digitando) {
         digitando = true;
-        saida.html('procurando...');
+        saida.html(`<div class="progress">
+                    <div class="indeterminate"></div>
+                    </div>`);
     }
 
     tempoUltimaDigitacao = (new Date()).getTime();
@@ -22,13 +24,14 @@ function atualiza() {
 
         if (diferencaTempo >= DURACAO_DIGITACAO && digitando) {
             digitando = false;
-            saida.html('exibe resultado...');
             let contactsSearch = searchContact(input.val());
-            listAllSearch(contactsSearch);
+            if (input.val() === '') {
+                saida.html('');
+            } else {
+                listAllSearch(contactsSearch);
+            }
         }
-
     }, DURACAO_DIGITACAO);
-
 }
 
 

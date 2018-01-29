@@ -10,10 +10,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- <link rel="icon" href="https://icon-icons.com/icons2/72/PNG/256/phonebook_notebook_14401.png" sizes="32x32"> -->
     <link rel="icon" href="http://icons.iconarchive.com/icons/graphicloads/colorful-long-shadow/32/Addressbook-icon.png" sizes="32x32">
 
-    <title>IForgot</title>
+    <title>Contatos</title>
 </head>
 
 <body>
@@ -22,7 +21,7 @@
         <div class="navbar-fixed">
             <nav class="cyan">
                 <div class="nav-wrapper">
-                    <a class="brand-logo left tab-left"><i class="material-icons">contacts</i>IForgot</a>
+                    <a class="brand-logo left tab-left"><i class="material-icons">contacts</i>Contatos</a>
                 </div>
             </nav>
         </div>
@@ -35,9 +34,9 @@
         <div class="col m8 offset-m2 s12 z-depth-1">
             <div class="conteiner">
                 <!-- Tab Opções -- Inicio -->
-                <ul id="tabs-swipe-demo" class="tabs tabs-fixed-width">
+                <ul id="tabs-swipe-demo" class="tabs tabs-fixed-width" id="tabs">
                     <li class="tab col s4" id="search"><a href="#list-cards-search"><i class="material-icons">search</i> Pesquisar</a></li>
-                    <li class="tab col s4 options" id="all-list"><a class="active" href="#list-cards">Todos Contatos</a></li>
+                    <li class="tab col s4 options"><a class="active" href="#list-cards" id="all-list">Todos Contatos</a></li>
                     <li class="tab col s4 options" id="favorite-list"><a href="#list-cards-favorite">Favoritos</a></li>
                 </ul>
                 <!-- Tab Opções -- FIM -->
@@ -75,7 +74,7 @@
             <i class="large material-icons">menu</i>
         </a>
         <ul>
-            <li class="waves-effect waves-light"><a href="#list-cards"><i class="material-icons">home</i></a></li>
+            <li class="waves-effect waves-light" id="home"><a><i class="material-icons">home</i></a></li>
             <li class="waves-effect waves-light modal-trigger" href="#card-form-contact" id="new-contact"><a><i class="material-icons">person_add</i></a></li>
             <li class="waves-effect waves-light"><a href="javascript:generatePDF()"><i class="material-icons">file_download</i></a></li>
             <li class="waves-effect waves-light"><a class="modal-trigger" href="#modal-about"><i class="material-icons">help_outline</i></a></li>
@@ -90,17 +89,17 @@
                 <form class="col s12" id="form-contact">
                     <div class="row">
                         <div class="input-field col s6">
-                            <input id="first_name" type="text" class="validate" required>
+                            <input id="first_name" type="text" class="validate require" required>
                             <label for="first_name">Nome</label>
                         </div>
                         <div class="input-field col s6">
-                            <input id="last_name" type="text" class="validate" required>
+                            <input id="last_name" type="text" class="validate require" required>
                             <label for="last_name">Sobrenome</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s8">
-                            <input id="email" type="email" class="validate" required>
+                            <input id="email" type="email" class="validate require" required>
                             <label for="email">Email</label>
                         </div>
                         <div class="input-field col s4">
@@ -144,8 +143,8 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <a class="modal-action modal-close waves-effect waves-green btn-flat blue-text text-darken-4">Cancelar</a>
-                        <button class="modal-action modal-close waves-effect waves-green btn-flat blue-text text-darken-4" id="btn-salvar" type="submit" onclick="saveForm();">Salvar</button>
+                        <a class="modal-action modal-close waves-effect waves-green btn-flat blue-text text-darken-4" id="btn-cancel-form">Cancelar</a>
+                        <button class="modal-action modal-close waves-effect waves-green btn-flat blue-text text-darken-4 disabled" id="btn-salvar" type="submit">Salvar</button>
                     </div>
                 </form>
             </div>
@@ -189,7 +188,6 @@
     <script type="text/javascript" src="../javascript/managerContact.js"></script>
     <script type="text/javascript" src="../javascript/searchContact.js"></script>
     <script type="text/javascript" src="../javascript/exportPDF.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.2/jspdf.plugin.autotable.js"></script>
 </body>
 
