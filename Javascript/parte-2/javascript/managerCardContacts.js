@@ -102,7 +102,7 @@ function listAllSearch(contacts) {
     $('#list-cards-search').html('');
     ordernize(contactsSearch);
     letters = [];
-    if (contacts.length == 0) {
+    if (contactsSearch.length == 0) {
         $('#list-cards-search').append(noContacts('person_pin', 'Nenhum contato encontrado na pesquisa.'));
     } else {
         contactsSearch.forEach((contact) => {

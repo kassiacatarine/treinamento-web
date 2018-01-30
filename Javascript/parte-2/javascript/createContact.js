@@ -45,8 +45,10 @@ function saveForm() {
 function verifyInputRequire() {
     if ($('#fist_name').val() !== '' && $('#last_name').val() !== '' && $('#email').val() !== '') {
         $('#btn-salvar').removeClass("disabled");
+        $('#btn-salvar').addClass('modal-close')
     } else {
         $('#btn-salvar').addClass("disabled");
+        $('#btn-salvar').removeClass('modal-close');
     }
 }
 
