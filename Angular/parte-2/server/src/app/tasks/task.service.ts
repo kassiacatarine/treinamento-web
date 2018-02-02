@@ -20,7 +20,7 @@ export class TaskService {
   }
 
   getTasks(): Task[] {
-    if (this.getLocalStorage()) {
+    if (this.getLocalStorage() === null) {
       this.tasks = [];
     } else {
       this.tasks = this.getLocalStorage();

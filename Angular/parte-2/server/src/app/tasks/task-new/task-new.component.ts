@@ -9,16 +9,23 @@ import { TaskService } from '../task.service';
 })
 export class TaskNewComponent implements OnInit {
 
-  tasks: Task[];
+  task: Task;
 
-  constructor(private taskService: TaskService) { }
-
-  ngOnInit() {
-    this.tasks = this.taskService.getTasks();
+  constructor(private taskService: TaskService) {
+    this.task = new Task();
   }
 
-  addTask(nameTask: string, dateTask: string) {
-    if (nameTask && dateTask) {
-    }
+  ngOnInit() {
+  }
+
+  addTask(task) {
+    this.taskService.addTask(task);
+  }
+
+  saveForm(evento: Event) {
+    this.task = new Task();
+    this.task.name = evento.target[0].value;
+    this.task.date = evento.target[1].value;
+    this.addTask(this.task);
   }
 }

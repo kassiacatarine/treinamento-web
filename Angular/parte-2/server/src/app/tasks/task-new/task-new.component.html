@@ -1,13 +1,31 @@
-<form>
+<form (submit)="saveForm($event)">
+    <label for="name-task">Nome: </label>
+    <input type="text" id="name-task" name="name" [(ngModel)]="task.name">
+    <label for="dateTask">Data: </label>
+    <input type="date" id="date-task" name="date" [(ngModel)]="task.date">
+    <button type="submit">Criar</button>
+</form>
+
+
+<!-- <div>
+    <label>Nome:
+          <input [(ngModel)]="task.name" placeholder="name">
+    </label>
+</div> -->
+
+
+
+
+<!-- <form>
     <label for="name-task">Nome: </label>
     <input #nameTask (keyup.enter)="addTask(nameTask.value); nameTask.value='' " id="name-task">
     <label for="dateTask" id="date-task">Data: </label>
     <input type="date" #dateTask id="date-task">
     <button type="submit" (click)="addTask(nameTask.value, dateTask.value)">Criar</button>
-</form>
+</form> -->
 
-<ul>
+<!-- <ul>
     <li *ngFor="let task of tasks">
         <p>Nome: {{ task.name }} | Data: {{ task.date }}</p>
     </li>
-</ul>
+</ul> -->
