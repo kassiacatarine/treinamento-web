@@ -1,8 +1,8 @@
+import { TaskService } from './task.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TaskListsComponent } from './task-lists/task-lists.component';
 import { TaskNewComponent } from './task-new/task-new.component';
-import { TaskComponent } from './task/task.component';
 
 @NgModule({
   imports: [
@@ -11,8 +11,8 @@ import { TaskComponent } from './task/task.component';
   declarations: [
     TaskListsComponent,
     TaskNewComponent,
-    TaskComponent
   ],
+  providers: [ TaskService ],
   exports: [
     TaskListsComponent,
     TaskNewComponent

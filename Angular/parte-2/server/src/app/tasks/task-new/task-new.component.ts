@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from '../task';
+import { TaskService } from '../task.service';
 
 @Component({
   selector: 'app-task-new',
@@ -8,17 +9,16 @@ import { Task } from '../task';
 })
 export class TaskNewComponent implements OnInit {
 
-  constructor() { }
+  tasks: Task[];
+
+  constructor(private taskService: TaskService) { }
 
   ngOnInit() {
+    this.tasks = this.taskService.getTasks();
   }
 
-  // tslint:disable-next-line:member-ordering
-  tasks: Task[] = [];
   addTask(nameTask: string, dateTask: string) {
     if (nameTask && dateTask) {
-      const task = new Task(nameTask, dateTask);
-      this.tasks.push(task);
     }
   }
 }
