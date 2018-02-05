@@ -9,6 +9,7 @@ import { TaskService } from '../service/task.service';
 })
 export class TaskAddComponent implements OnInit {
 
+  link = 'modal-add-task';
   constructor(private taskService: TaskService) { }
 
   ngOnInit() {

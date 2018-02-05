@@ -1,8 +1,10 @@
+<app-task-search (valueSearch)="searchTask($event)"></app-task-search>
+<app-task-order (orderList)="orderListSelected($event)"></app-task-order>
 <div class="uk-overflow-auto">
     <table class="uk-table uk-table-hover uk-table-middle uk-table-divider uk-table-responsive">
         <thead>
             <tr>
-                <th class="uk-table-shrink"></th>
+                <th class="uk-table-shrink">Status</th>
                 <th class="uk-table-expand">Nome</th>
                 <!-- <th class="uk-table-expand">Descrição</th> -->
                 <th>Data</th>
@@ -10,16 +12,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let task of tasks">
-                <td><input class="uk-checkbox" type="checkbox"></td>
+            <tr *ngFor="let task of tasks" [class.fineshed]="task.status">
+                <td><input class="uk-checkbox" type="checkbox" [checked]="task.status" (click)="changeStatus(Status.checked, task)" #Status></td>
                 <td>{{ task.name }}</td>
                 <!-- <td class="uk-table-link">
                     <a class="uk-link-reset" href=""></a>
                 </td> -->
-                <td class="uk-text-nowrap">{{ task.date }}</td>
+                <td class="uk-text-nowrap">{{ task.date | date:'dd/MM/yyyy' }}</td>
                 <td>
                     <div class="uk-button-group">
-                        <!-- <app-task-edit [task]="task"></app-task-edit> -->
+                        <app-task-edit [task]="task"></app-task-edit>
                         <app-task-remove [task]="task"></app-task-remove>
                     </div>
                 </td>

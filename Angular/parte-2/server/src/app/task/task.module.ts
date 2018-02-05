@@ -8,6 +8,8 @@ import { TaskAddComponent } from './task-add/task-add.component';
 import { TaskRemoveComponent } from './task-remove/task-remove.component';
 import { TaskEditComponent } from './task-edit/task-edit.component';
 import { FormsModule } from '@angular/forms';
+import { TaskOrderComponent } from './task-order/task-order.component';
+import { TaskSearchComponent } from './task-search/task-search.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { FormsModule } from '@angular/forms';
     TaskFormComponent,
     TaskAddComponent,
     TaskRemoveComponent,
-    TaskEditComponent
+    TaskEditComponent,
+    TaskOrderComponent,
+    TaskSearchComponent
   ],
   exports: [
     TaskComponent

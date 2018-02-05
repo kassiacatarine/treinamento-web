@@ -1,4 +1,4 @@
-<div id="modal-sections" uk-modal>
+<div [id]="link" uk-modal>
     <div class="uk-modal-dialog">
         <form class="uk-form-stacked uk-margin" #formTask="ngForm" (ngSubmit)="saveData(formTask)">
             <button class="uk-modal-close-default" type="button" uk-close></button>
@@ -9,13 +9,13 @@
                 <div class="uk-margin">
                     <label class="uk-form-label" for="form-horizontal-text">Nome</label>
                     <div class="uk-form-controls">
-                        <input class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" name="name" ngModel>
+                        <input class="uk-input uk-form-width-large" id="form-horizontal-text" type="text" name="name" [ngModel]="task?.name" ngModel>
                     </div>
                 </div>
                 <div class="uk-margin">
                     <label class="uk-form-label" for="form-horizontal-text">Data</label>
                     <div class="uk-form-controls">
-                        <input class="uk-input uk-form-width-medium" id="form-horizontal-text" type="date" name="date" ngModel>
+                        <input class="uk-input uk-form-width-medium" id="form-horizontal-text" type="date" name="date" [ngModel]="task?.date" ngModel>
                     </div>
                 </div>
             </div>

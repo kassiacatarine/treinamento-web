@@ -21,8 +21,42 @@ export class TaskListComponent implements OnInit {
     this.getTasks();
   }
 
-  getTasks() {
+  getTasks(): void {
     this.tasks = this.taskService.getTasks();
+    this.orderListName();
   }
 
+  changeStatus(inputStatus, task): void {
+    task.status = inputStatus;
+    this.taskService.updateTask(task);
+  }
+
+  orderListSelected(value): void {
+    this.getTasks();
+    if (value === '2') {
+      this.tasks = this.tasks.filter(function(item) {
+        return item.status !== true;
+      });
+    } else if (value === '3') {
+      this.tasks = this.tasks.filter(function(item) {
+        return item.status !== false;
+      });
+    }
+  }
+
+  orderListName(): void {
+    this.tasks = this.tasks.sort(function(a, b) {
+      return (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0);
+    });
+  }
+
+  searchTask(value) {
+    if (value !== '') {
+      this.tasks = this.tasks.filter(function(item) {
+          return item.name.indexOf(value) !== -1;
+      });
+    } else {
+      this.getTasks();
+    }
+  }
 }

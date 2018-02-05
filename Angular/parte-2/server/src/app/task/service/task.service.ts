@@ -48,4 +48,15 @@ export class TaskService {
       }
     }
   }
+
+  updateTask(task: Task): void {
+    this.tasks.filter(function(item) {
+      if (item.id === task.id) {
+        item.name = task.name;
+        item.date = task.date;
+        item.status = task.status;
+      }
+    });
+    this.setLocalStorage(this.tasks);
+  }
 }

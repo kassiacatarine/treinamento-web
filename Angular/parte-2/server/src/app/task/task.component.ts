@@ -7,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskComponent implements OnInit {
 
+  newTask = false;
 
   constructor() {
   }
 
   ngOnInit() {
+  }
+
+  activeTask() {
+    this.newTask = !this.newTask;
   }
 }

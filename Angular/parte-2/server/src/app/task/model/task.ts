@@ -3,11 +3,13 @@ export class Task {
     name: string;
     date: string;
     description?: string;
+    status: boolean;
 
     constructor(name: string, date: string) {
         this.id = this.generateId();
         this.name = name;
         this.date = date;
+        this.status = false;
     }
 
     generateId(): string {

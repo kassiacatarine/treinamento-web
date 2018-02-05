@@ -9,14 +9,15 @@ import { Task } from '../model/task';
 export class TaskEditComponent implements OnInit {
 
   @Input() task: Task;
-
+  link = 'modal-edit-task';
   constructor() { }
 
   ngOnInit() {
   }
 
-  editTask(taskAltera, task) {
-    task.name = taskAltera.name;
-    task.date = taskAltera.date;
+  editTask(taskedited) {
+    console.log(taskedited);
+    this.task.name = taskedited.name;
+    this.task.date = taskedited.date;
   }
 }

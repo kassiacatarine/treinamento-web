@@ -9,9 +9,11 @@ import { Task } from '../model/task';
 export class TaskFormComponent implements OnInit {
 
   @Input() task: Task;
+  @Input() link: string;
   @Output() taskEmited = new EventEmitter();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
@@ -24,6 +26,4 @@ export class TaskFormComponent implements OnInit {
   resetForm(formTask) {
     formTask.reset();
   }
-
-
 }
