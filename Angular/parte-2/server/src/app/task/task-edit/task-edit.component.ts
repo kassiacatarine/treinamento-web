@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Task } from '../model/task';
+import { TaskService } from '../service/task.service';
 
 @Component({
   selector: 'app-task-edit',
@@ -10,7 +11,7 @@ export class TaskEditComponent implements OnInit {
 
   @Input() task: Task;
   link = 'modal-edit-task';
-  constructor() { }
+  constructor(private taskService: TaskService) { }
 
   ngOnInit() {
   }
@@ -19,5 +20,6 @@ export class TaskEditComponent implements OnInit {
     console.log(taskedited);
     this.task.name = taskedited.name;
     this.task.date = taskedited.date;
+    this.taskService.updateTask(this.task);
   }
 }
