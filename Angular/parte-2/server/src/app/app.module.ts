@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { TasksModule } from './tasks/tasks.module';
+import { TaskModule } from './task/task.module';
 
 
 @NgModule({
@@ -12,7 +12,7 @@ import { TasksModule } from './tasks/tasks.module';
   ],
   imports: [
     BrowserModule,
-    TasksModule
+    TaskModule
   ],
   providers: [],
   bootstrap: [AppComponent]

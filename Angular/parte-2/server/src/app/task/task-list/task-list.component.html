@@ -1,0 +1,29 @@
+<div class="uk-overflow-auto">
+    <table class="uk-table uk-table-hover uk-table-middle uk-table-divider uk-table-responsive">
+        <thead>
+            <tr>
+                <th class="uk-table-shrink"></th>
+                <th class="uk-table-expand">Nome</th>
+                <!-- <th class="uk-table-expand">Descrição</th> -->
+                <th>Data</th>
+                <th class="uk-table-shrink uk-text-nowrap"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let task of tasks">
+                <td><input class="uk-checkbox" type="checkbox"></td>
+                <td>{{ task.name }}</td>
+                <!-- <td class="uk-table-link">
+                    <a class="uk-link-reset" href=""></a>
+                </td> -->
+                <td class="uk-text-nowrap">{{ task.date }}</td>
+                <td>
+                    <div class="uk-button-group">
+                        <!-- <app-task-edit [task]="task"></app-task-edit> -->
+                        <app-task-remove [task]="task"></app-task-remove>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
