@@ -1,11 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Task } from './task';
+import { Task } from '../model/task';
+import { Subject } from 'rxjs/Subject';
 
 
 @Injectable()
 export class TaskService {
 
   private tasks: Task[];
+  private taskCreateSource = new Subject<Task>();
+
+  taskCreated$ = this.taskCreateSource.asObservable();
+
 
   constructor() {
     this.tasks = [];
@@ -32,6 +37,7 @@ export class TaskService {
     const tasks = this.getTasks();
     tasks.push(task);
     this.setLocalStorage(tasks);
+    this.taskCreateSource.next(task);
   }
 
   removeTask(task: Task): void {
@@ -41,5 +47,16 @@ export class TaskService {
         this.setLocalStorage(this.tasks);
       }
     }
+  }
+
+  updateTask(task: Task): void {
+    this.tasks.filter(function(item) {
+      if (item.id === task.id) {
+        item.name = task.name;
+        item.date = task.date;
+        item.status = task.status;
+      }
+    });
+    this.setLocalStorage(this.tasks);
   }
 }

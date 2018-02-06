@@ -2,9 +2,14 @@ export class Task {
     id: string;
     name: string;
     date: string;
+    description?: string;
+    status: boolean;
 
-    constructor() {
+    constructor(name: string, date: string) {
         this.id = this.generateId();
+        this.name = name;
+        this.date = date;
+        this.status = false;
     }
 
     generateId(): string {

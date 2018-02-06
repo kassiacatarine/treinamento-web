@@ -1,7 +1,0 @@
-<h2>Lista de Tarefas</h2>
-<ul>
-    <li *ngFor="let task of tasks">
-        ID: {{ task.id }} || Nome: {{ task.name }} || Data: {{ task.date | date:"dd/MM/yyyy" }}
-        <app-task-remove [task]='task'></app-task-remove>
-    </li>
-</ul>

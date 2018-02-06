@@ -1,0 +1,14 @@
+<div class="uk-margin uk-margin-medium-top">
+    <label for="order-list">Visualizar Tarefas: </label>
+    <div uk-form-custom="target: > * > span:first-child">
+        <select id="order-list" (change)="emitValue(selectOrder.value)" #selectOrder>
+          <option value="1">Todas</option>
+          <option value="2">Incompletas</option>
+          <option value="3">Completas</option>
+      </select>
+        <button class="uk-button uk-button-default" type="button" tabindex="-1">
+          <span></span>
+          <span uk-icon="icon: chevron-down"></span>
+      </button>
+    </div>
+</div>
