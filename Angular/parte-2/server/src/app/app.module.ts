@@ -1,10 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { MaterializeModule } from 'angular2-materialize';
 
 import { AppComponent } from './app.component';
-import { CoreModule } from './core/core.module';
 import { TaskModule } from './task/task.module';
+import { AppRoutingModule } from './app-routing.module';
+import { CoreModule } from './core/core.module';
+import { ErrorModule } from './error/error.module';
 
 
 @NgModule({
@@ -13,8 +16,11 @@ import { TaskModule } from './task/task.module';
   ],
   imports: [
     BrowserModule,
-    CoreModule,
+    MaterializeModule,
     TaskModule,
+    CoreModule,
+    ErrorModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

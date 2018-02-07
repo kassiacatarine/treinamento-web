@@ -1,2 +1,3 @@
-<a class="uk-button uk-button-primary" href="#modal-add-task" uk-toggle>Nova Tarefa</a>
+<a routerLink="task/new" uk-toggle>Nova Tarefa</a>
+<a class="uk-button uk-button-primary" href="#task/new">Nova Tarefa</a>
 <app-task-form [link]="link" (taskEmited)="addTask($event)"></app-task-form>
