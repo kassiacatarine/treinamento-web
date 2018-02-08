@@ -1,4 +1,4 @@
-<div [id]="link" uk-modal>
+<!-- <div [id]="link" uk-modal>
     <div class="uk-modal-dialog">
         <form class="uk-form-stacked uk-margin" #formTask="ngForm" (ngSubmit)="saveData(formTask)">
             <button class="uk-modal-close-default" type="button" uk-close></button>
@@ -22,6 +22,35 @@
             <div class="uk-modal-footer uk-text-right">
                 <button class="uk-button uk-button-default uk-modal-close" (click)="resetForm(formTask)" type="button">Cancela</button>
                 <button class="uk-button uk-button-primary" type="submit">Salvar</button>
+            </div>
+        </form>
+    </div>
+</div> -->
+<div class="card-panel">
+    <div class="row">
+        <form class="col s12" #formTask="ngForm" (ngSubmit)="saveData(formTask)">
+            <h4 class="header center-align">Tarefa</h4>
+            <div class="row">
+                <div class="input-field col s10">
+                    <input id="name" type="text" class="validate" [ngModel]="task?.name" ngModel>
+                    <label for="name">Nome</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s10">
+                    <label for="date">Data</label>
+                    <input id="date" type="date" name="date" [ngModel]="task?.date" ngModel>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="description" class="materialize-textarea" [ngModel]="task?.description" ngModel></textarea>
+                    <label for="description">Descrição</label>
+                </div>
+            </div>
+            <div class="card-action">
+                <a class="btn-flat waves-effect waves-black left" (click)="resetForm(formTask)" routerLink="/task">Cancela</a>
+                <button class="btn-flat waves-effect waves-green right" type="submit">Salvar</button>
             </div>
         </form>
     </div>

@@ -33,7 +33,7 @@ import { TaskRoutingModule } from './task-routing.module';
     TaskRemoveComponent,
     TaskEditComponent,
     TaskOrderComponent,
-    TaskSearchComponent
+    TaskSearchComponent,
   ],
   exports: [
     TaskComponent

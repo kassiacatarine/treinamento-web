@@ -1,31 +1,66 @@
-<app-task-search (valueSearch)="searchTask($event)"></app-task-search>
-<app-task-order (orderList)="orderListSelected($event)"></app-task-order>
-<div class="uk-overflow-auto">
-    <table class="uk-table uk-table-hover uk-table-middle uk-table-divider uk-table-responsive">
-        <thead>
-            <tr>
-                <th class="uk-table-shrink">Status</th>
-                <th class="uk-table-expand">Nome</th>
-                <!-- <th class="uk-table-expand">Descrição</th> -->
-                <th>Data</th>
-                <th class="uk-table-shrink uk-text-nowrap"></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let task of tasks" [class.fineshed]="task.status">
-                <td><input class="uk-checkbox" type="checkbox" [checked]="task.status" (click)="changeStatus(Status.checked, task)" #Status></td>
-                <td>{{ task.name }}</td>
-                <!-- <td class="uk-table-link">
-                    <a class="uk-link-reset" href=""></a>
-                </td> -->
-                <td class="uk-text-nowrap">{{ task.date | date:'dd/MM/yyyy' }}</td>
-                <td>
-                    <div class="uk-button-group">
+<div class="row">
+    <!-- <div class="col s8">
+        <app-task-search (valueSearch)="searchTask($event)"></app-task-search>
+        <app-task-order (orderList)="orderListSelected($event)"></app-task-order>
+        <div class="uk-overflow-auto">
+            <table class="uk-table uk-table-hover uk-table-middle uk-table-divider uk-table-responsive">
+                <thead>
+                    <tr>
+                        <th class="uk-table-shrink">Status</th>
+                        <th class="uk-table-expand">Nome</th>
+                        <th>Data</th>
+                        <th class="uk-table-shrink uk-text-nowrap"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let task of tasks" [class.fineshed]="task.status">
+                        <td><input class="uk-checkbox" type="checkbox" [checked]="task.status" (click)="changeStatus(Status.checked, task)" #Status></td>
+                        <td>{{ task.name }}</td>
+                        <td class="uk-text-nowrap">{{ task.date | date:'dd/MM/yyyy' }}</td>
+                        <td>
+                            <div class="uk-button-group">
+                                <app-task-edit [task]="task"></app-task-edit>
+                                <app-task-remove [task]="task"></app-task-remove>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div> -->
+    <div class="col s8 z-depth-1">
+        <div class="card transparent sticky-action" *ngFor="let task of tasks">
+            <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">{{ task.name }}
+                  <a><i class="material-icons right">more_vert</i></a>
+                  <span class="red badge right white-text" [class.green]="task.status" (click)="changeStatus(task)">{{ task.status ? 'Completa' : 'Incompleta' }}</span>
+                </span>
+                <p>{{ task.date | date:'dd/MM/yyyy' }}</p>
+            </div>
+            <div class="card-stacked">
+                <div class="card-action">
+                    <div class="right-align">
                         <app-task-edit [task]="task"></app-task-edit>
                         <app-task-remove [task]="task"></app-task-remove>
                     </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                </div>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">{{ task.name }}<a><i class="material-icons right">close</i></a></span>
+                <p>{{ task.description }}</p>
+            </div>
+            <!-- <a [routerLink]="['.', task.id ]">
+              <input type="checkbox" [checked]="task.status" (click)="changeStatus(Status.checked, task)" #Status>
+                <div class="center">
+                    {{ task.name }}
+                </div>
+                <app-task-edit [task]="task"></app-task-edit>
+                        <app-task-remove [task]="task"></app-task-remove>
+                <div class="right">{{ task.date | date:'dd/MM/yyyy' }}</div>
+            </a> -->
+        </div>
+    </div>
+    <div class="col s4 z-depth-2">
+        <router-outlet></router-outlet>
+    </div>
 </div>

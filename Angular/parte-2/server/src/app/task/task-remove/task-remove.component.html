@@ -1,1 +1,2 @@
-<button class="uk-button uk-button-danger" (click)="deleteTask(task)">Excluir</button>
+<a [routerLink]="[task.id, 'remove']" class="red-text btn-flat waves-effect waves-red" (click)="deleteTask(task)">Excluir</a>
+<!-- <button class="uk-button uk-button-danger" (click)="deleteTask(task)">Excluir</button> -->

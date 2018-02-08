@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Task } from '../model/task';
 
 @Component({
@@ -12,10 +13,14 @@ export class TaskFormComponent implements OnInit {
   @Input() link: string;
   @Output() taskEmited = new EventEmitter();
 
-  constructor() {
+  constructor(private route: ActivatedRoute) {
   }
 
   ngOnInit() {
+    this.route.params.subscribe((params: any) => {
+      console.log(params['id']);
+      this.task = params['id'];
+    });
   }
 
   saveData(form) {
