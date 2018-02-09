@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { MaterializeModule } from 'angular2-materialize';
 
 import { AppComponent } from './app.component';
-import { TaskModule } from './task/task.module';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { ErrorModule } from './error/error.module';
@@ -17,7 +16,6 @@ import { ErrorModule } from './error/error.module';
   imports: [
     BrowserModule,
     MaterializeModule,
-    TaskModule,
     CoreModule,
     ErrorModule,
     AppRoutingModule,

@@ -8,16 +8,20 @@ import { TaskAddComponent } from './task-add/task-add.component';
 import { TaskRemoveComponent } from './task-remove/task-remove.component';
 
 const taskRoutes: Routes = [
-  { path: 'task', component: TaskComponent,
+  { path: '', component: TaskComponent,
   children: [
-    { path: '', component: TaskListComponent, children: [
+    { path: '', children: [
+      { path: '', component: TaskListComponent, outlet: 'list' },
       { path: ':id', pathMatch: 'prefix',
       children: [
-        { path: 'edit', component: TaskFormComponent },
+        { path: 'edit', component: TaskFormComponent, outlet: 'form' },
         { path: 'remove', component: TaskRemoveComponent }
-      ]}
+      ]},
+    { path: 'new', children: [
+      { path: '',  component: TaskFormComponent, outlet: 'form' }
     ]},
-    { path: 'new', component: TaskFormComponent },
+    ]},
+    // { path: 'new', component: TaskFormComponent, outlet: 'add' },
   ]},
 ];
 

@@ -5,15 +5,16 @@ import { PageNotFoundComponent } from './error/page-not-found/page-not-found.com
 
 const routes: Routes = [
   { path: '', redirectTo: '/task', pathMatch: 'full' },
+  { path: 'task', loadChildren: 'app/task/task.module#TaskModule' },
   { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
   imports: [
     RouterModule.forRoot(routes,
-      // {
-      //   enableTracing: true, // <-- debugging purposes only
-      // })
+      {
+        enableTracing: true, // <-- debugging purposes only
+      })
   ],
   exports: [
     RouterModule
