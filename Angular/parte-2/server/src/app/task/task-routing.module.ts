@@ -11,14 +11,15 @@ const taskRoutes: Routes = [
   { path: '', component: TaskComponent,
   children: [
     { path: '', children: [
-      { path: '', component: TaskListComponent, outlet: 'list' },
+      { path: '', component: TaskListComponent },
+      { path: 'new',  component: TaskFormComponent },
       { path: ':id',
       children: [
-        { path: 'edit', component: TaskFormComponent, outlet: 'form' },
-        { path: 'delete' }
+        { path: 'edit', component: TaskFormComponent },
+        { path: 'delete', component: TaskListComponent }
       ]},
     { path: 'new', children: [
-      { path: '',  component: TaskFormComponent, outlet: 'form' }
+      { path: '',  component: TaskFormComponent, outlet: 'content' },
     ]},
     ]},
     // { path: 'new', component: TaskFormComponent, outlet: 'add' },

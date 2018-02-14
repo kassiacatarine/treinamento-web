@@ -1,4 +1,4 @@
-<div class="uk-margin uk-margin-medium-top">
+<!-- <div class="uk-margin uk-margin-medium-top">
     <label for="order-list">Visualizar Tarefas: </label>
     <div uk-form-custom="target: > * > span:first-child">
         <select id="order-list" (change)="emitValue(selectOrder.value)" #selectOrder>
@@ -11,4 +11,11 @@
           <span uk-icon="icon: chevron-down"></span>
       </button>
     </div>
-</div>
+</div> -->
+
+<label for="order-list">Filtro</label>
+<select class="browser-default" id="order-list" (change)="emitValue(selectOrder.value)" #selectOrder>
+    <option value="1" selected>Todas</option>
+    <option value="2">Incompletas</option>
+    <option value="3">Completas</option>
+</select>

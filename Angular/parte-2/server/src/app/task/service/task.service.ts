@@ -55,8 +55,17 @@ export class TaskService {
         item.name = task.name;
         item.date = task.date;
         item.status = task.status;
+        item.description = task.description;
       }
     });
     this.setLocalStorage(this.tasks);
+  }
+
+  getTask(id): any {
+    this.getTasks();
+    const task = this.tasks.filter(function(item) {
+      return item.id === id;
+    });
+    return task[0];
   }
 }

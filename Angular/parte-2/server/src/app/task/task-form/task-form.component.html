@@ -26,30 +26,28 @@
         </form>
     </div>
 </div> -->
-<div class="card-panel">
+<div class="card-panel col s6 offset-s3 center-align">
     <div class="row">
         <form class="col s12" #formTask="ngForm" (ngSubmit)="saveData(formTask)">
-            <h4 class="header center-align">Tarefa</h4>
+            <h4 class="header center-align">{{ title }}</h4>
             <div class="row">
-                <div class="input-field col s10">
-                    <input id="name" type="text" class="validate" [ngModel]="task?.name" ngModel>
-                    <label for="name">Nome</label>
+                <div class="input-field col s5 offset-s1">
+                    <input id="name" type="text" class="validate" name="name" [ngModel]="task?.name" ngModel>
+                    <label for="name" [ngClass]="{'active': task?.name}">Nome</label>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col s10">
+                <div class="col s4 offset-s1">
                     <label for="date">Data</label>
                     <input id="date" type="date" name="date" [ngModel]="task?.date" ngModel>
                 </div>
             </div>
             <div class="row">
-                <div class="input-field col s12">
-                    <textarea id="description" class="materialize-textarea" [ngModel]="task?.description" ngModel></textarea>
-                    <label for="description">Descrição</label>
+                <div class="input-field col s10 offset-s1">
+                    <textarea id="description" class="materialize-textarea" name="description" [ngModel]="task?.description" ngModel></textarea>
+                    <label for="description" [ngClass]="{'active': task?.description}">Descrição</label>
                 </div>
             </div>
             <div class="card-action">
-                <a class="btn-flat waves-effect waves-black left" (click)="resetForm(formTask)" routerLink="/task">Cancela</a>
+                <a class="btn-flat waves-effect waves-black left" (click)="resetForm(formTask)" routerLink="/task">Cancelar</a>
                 <button class="btn-flat waves-effect waves-green right" type="submit">Salvar</button>
             </div>
         </form>

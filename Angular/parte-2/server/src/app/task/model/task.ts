@@ -5,10 +5,11 @@ export class Task {
     description?: string;
     status: boolean;
 
-    constructor(name: string, date: string) {
+    constructor(name: string, date: string, description?: string) {
         this.id = this.generateId();
         this.name = name;
         this.date = date;
+        this.description = description;
         this.status = false;
     }
 

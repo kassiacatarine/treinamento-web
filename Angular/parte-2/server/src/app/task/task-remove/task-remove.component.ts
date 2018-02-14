@@ -11,6 +11,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class TaskRemoveComponent implements OnInit {
 
   @Input() task: Task;
+  id: string;
+
 
   constructor(
     private taskService: TaskService,
@@ -19,6 +21,10 @@ export class TaskRemoveComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.route.params.subscribe((params: any) => {
+      console.log(params['id']);
+      this.id = params['id'];
+    });
   }
 
   navigateDelete() {
@@ -27,8 +33,8 @@ export class TaskRemoveComponent implements OnInit {
 
   deleteTask() {
     if (confirm('Tem certeza que deseja excluir?')) {
-      this.taskService.removeTask(this.task.id);
+      this.taskService.removeTask(this.id);
     }
-    this.router.navigate(['../'], { relativeTo: this.route });
+    this.router.navigate(['/task'], { relativeTo: this.route });
   }
 }
