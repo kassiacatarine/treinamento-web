@@ -1,0 +1,10 @@
+<div fxLayoutAlign="center">
+    <mat-nav-list fxFlex="70" fxLayout="column" class="mat-elevation-z3 margin-top-medium padding-0">
+        <div class="item-list" *ngFor="let c of typesOfShoes">
+            <app-card-item [contact]="c"></app-card-item>
+        </div>
+    </mat-nav-list>
+</div>
+<div class="modal">
+    <router-outlet></router-outlet>
+</div>
