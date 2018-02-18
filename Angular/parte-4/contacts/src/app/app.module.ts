@@ -1,21 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injector } from '@angular/core';
 
-import { Http, XHRBackend, RequestOptions, HttpModule } from '@angular/http';
 import { Router, RouterModule } from '@angular/router';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { HttpInterceptor } from './http-interceptor.service';
 import { CoreModule } from './core/core.module';
+import { InterceptorService } from './interceptor.service';
 
-export function HttpInterceptorFactory(backend: XHRBackend, options: RequestOptions, router: Router, injector: Injector) {
-  return new HttpInterceptor(backend, options, router, injector);
-}
 
 @NgModule({
   declarations: [
@@ -26,11 +24,13 @@ export function HttpInterceptorFactory(backend: XHRBackend, options: RequestOpti
     BrowserAnimationsModule,
     CoreModule,
     RouterModule,
-    HttpModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [
-    { provide: Http, useFactory: HttpInterceptorFactory, deps: [XHRBackend, RequestOptions, Router, Injector] }
+    {
+      provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

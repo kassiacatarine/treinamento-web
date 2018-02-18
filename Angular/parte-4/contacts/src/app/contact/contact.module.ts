@@ -9,24 +9,24 @@ import { MaterialModule } from '../material.module';
 import { ContactComponent } from './contact.component';
 import { ContactListComponent } from './components/contact-list/contact-list.component';
 
-import { ContactService } from './services/contact.service';
-
 import { ContactRoutingModule } from './contact-routing.module';
 import { CardItemComponent } from './components/contact-list/card-item/card-item.component';
 import { ContactDetailComponent } from './components/contact-detail/contact-detail.component';
 import { ContactEditComponent } from './components/contact-edit/contact-edit.component';
 import { ContactDeleteComponent } from './components/contact-delete/contact-delete.component';
+import { ContactService } from './services/contact.service';
+import { ContactNewComponent } from './components/contact-new/contact-new.component';
 
 @NgModule({
   imports: [
-    CommonModule,
+  CommonModule,
     MaterialModule,
     FlexLayoutModule,
     RouterModule,
     ContactRoutingModule
   ],
   providers: [
-    ContactService,
+    ContactService
   ],
   declarations: [
     ContactComponent,
@@ -34,7 +34,8 @@ import { ContactDeleteComponent } from './components/contact-delete/contact-dele
     CardItemComponent,
     ContactDetailComponent,
     ContactEditComponent,
-    ContactDeleteComponent
+    ContactDeleteComponent,
+    ContactNewComponent
   ]
 })
 export class ContactModule { }

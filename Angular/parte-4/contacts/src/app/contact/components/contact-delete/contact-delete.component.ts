@@ -1,27 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
+import { ContactService } from '../../services/contact.service';
 
 @Component({
   selector: 'app-contact-delete',
   templateUrl: './contact-delete.component.html',
   styleUrls: ['./contact-delete.component.css']
 })
-export class ContactDeleteComponent implements OnInit {
+export class ContactDeleteComponent implements OnInit, OnDestroy {
+
+  subscribe: Subscription;
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private contactService: ContactService
   ) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      console.log(params);
-      this.confirmDelete(params);
+      console.log(params['id']);
+      this.confirmDelete(params['id']);
     });
   }
 
-  confirmDelete(contact): void {
+  ngOnDestroy() {
+    if (this.subscribe) { this.subscribe.unsubscribe(); }
+  }
+
+  confirmDelete(id): void {
     if (window.confirm('Tem certeza que deseja excluir esse contato?')) {
-      console.log('Excluir contato ' + contact._id);
+      this.subscribe = this.contactService.deleteContact(id).subscribe(data => console.log(data));
     }
   }
 }

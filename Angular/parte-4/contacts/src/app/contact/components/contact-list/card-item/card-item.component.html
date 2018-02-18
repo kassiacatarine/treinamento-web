@@ -1,8 +1,18 @@
-<a mat-list-item [routerLink]="[contact]">
-    <img matListAvatar src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-    <h4 matLine> {{ contact }} </h4>
-    <button mat-icon-button>
-        <mat-icon>more_vert</mat-icon>
-     </button>
+<a mat-list-item (click)="goToDescription()">
+    <img matListAvatar [src]="contact.info.avatar" alt="Photo">
+    <h4 matLine> {{ contact.firstName }} {{ contact.lastName }}</h4>
+    <button mat-icon-button [matMenuTriggerFor]="menu" (click)="$event.stopPropagation()">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item [routerLink]="[contact._id, 'edit']">
+          <mat-icon color="primary">edit</mat-icon>
+          <span>Editar</span>
+        </button>
+        <button mat-menu-item [routerLink]="[contact._id, 'delete']">
+        <mat-icon color="warn">delete</mat-icon>
+        <span>Excluir</span>
+      </button>
+    </mat-menu>
     <mat-divider></mat-divider>
 </a>

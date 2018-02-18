@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Contact } from '../../models/contact';
 import { Subscription } from 'rxjs/Subscription';
-import { ContactHttpService } from '../../services/contact-http.service';
+import { ContactService } from '../../services/contact.service';
 
 @Component({
   selector: 'app-contact-detail',
@@ -19,12 +19,12 @@ export class ContactDetailComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
-    private contactHttpService: ContactHttpService
+    private contactService: ContactService
   ) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.getContact(params._id);
+      this.getContact(params['id']);
     });
   }
 
@@ -35,10 +35,9 @@ export class ContactDetailComponent implements OnInit, OnDestroy {
   getContact(id) {
     if (!id) { return; }
 
-    this.subscribe = this.contactService.getContact(id).subscribe((data) => {
-      this.contact = data;
-      console.log(this.contact);
-    });
+    this.subscribe = this.contactService.getContact(id).subscribe(
+      data => { this.contact = data; console.log(this.contact); }
+    );
   }
 
 }

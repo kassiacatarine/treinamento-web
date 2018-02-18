@@ -1,24 +1,32 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
+import { Contact } from '../models/contact';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class ContactService {
 
-  constructor(
-    private http: Http
-  ) { }
+  constructor(private http: HttpClient) { }
 
-  getContact(id) {
-    if (!id) {
-      return null;
-    }
-    return this.http
-      .get(`contacts/${id}`)
-      .map((res: Response) => res.json())
-      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+  getContacts(): Observable<any> {
+    return this.http.get<Contact[]>('contacts');
+  }
+
+  getContact(id): Observable<any> {
+    return this.http.get<Contact>(`contacts/${id}`);
+  }
+
+  addContact(contact): Observable<any> {
+    return this.http.post<Contact>('contacts', contact);
+  }
+
+  deleteContact(id): Observable<any> {
+    return this.http.delete(`contacts/${id}`);
+  }
+
+  updateContact(contact): Observable<any> {
+    return this.http.put<Contact>(`contacts/${contact._id}`, contact);
   }
 
 }

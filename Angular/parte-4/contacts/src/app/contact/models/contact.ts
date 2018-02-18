@@ -1,5 +1,6 @@
 export class Contact {
   constructor(
+    _id?: string,
     firstName?: string,
     lastName?: string,
     email?: string,
@@ -12,6 +13,5 @@ export class Contact {
       comments?: string
     ) => Object,
     isFavorite?: boolean,
-    _id?: string
   ) { }
 }
