@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { ContactService } from '../../services/contact.service';
 
@@ -14,12 +14,12 @@ export class ContactDeleteComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private contactService: ContactService
   ) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      console.log(params['id']);
       this.confirmDelete(params['id']);
     });
   }
@@ -30,7 +30,8 @@ export class ContactDeleteComponent implements OnInit, OnDestroy {
 
   confirmDelete(id): void {
     if (window.confirm('Tem certeza que deseja excluir esse contato?')) {
-      this.subscribe = this.contactService.deleteContact(id).subscribe(data => console.log(data));
+      this.contactService.deleteContact(id);
     }
+    this.router.navigate(['../../'], { relativeTo: this.route });
   }
 }

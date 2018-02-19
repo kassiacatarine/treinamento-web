@@ -20,7 +20,7 @@ export class CardItemComponent implements OnInit {
   }
 
   goToDescription() {
-    this.router.navigate([this.contact._id ], { relativeTo: this.route });
+    this.router.navigate([this.contact._id], { relativeTo: this.route });
   }
 
 }

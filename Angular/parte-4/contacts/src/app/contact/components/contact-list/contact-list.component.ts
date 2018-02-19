@@ -11,8 +11,6 @@ import { Contact } from '../../models/contact';
 })
 export class ContactListComponent implements OnInit, OnDestroy {
 
-  typesOfShoes = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
-
   contacts: Contact[];
 
   subscribe: Subscription;
@@ -20,13 +18,17 @@ export class ContactListComponent implements OnInit, OnDestroy {
   constructor(private contactService: ContactService) { }
 
   ngOnInit() {
-    this.subscribe = this.contactService.getContacts().subscribe(
-      data => this.contacts = data
-    );
+    this.getContacts();
   }
 
   ngOnDestroy() {
     if (this.subscribe) { this.subscribe.unsubscribe(); }
   }
 
+  getContacts() {
+    window.alert('atualizou');
+    this.subscribe = this.contactService.getContacts().subscribe(
+      data => this.contacts = data
+    );
+  }
 }

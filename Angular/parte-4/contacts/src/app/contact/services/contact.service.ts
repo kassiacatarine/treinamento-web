@@ -10,23 +10,23 @@ export class ContactService {
   constructor(private http: HttpClient) { }
 
   getContacts(): Observable<any> {
-    return this.http.get<Contact[]>('contacts');
+    return this.http.get<Contact[]>('');
   }
 
   getContact(id): Observable<any> {
-    return this.http.get<Contact>(`contacts/${id}`);
+    return this.http.get<Contact>(`/${id}`);
   }
 
   addContact(contact): Observable<any> {
-    return this.http.post<Contact>('contacts', contact);
+    return this.http.post<Contact>('', contact);
   }
 
-  deleteContact(id): Observable<any> {
-    return this.http.delete(`contacts/${id}`);
+  deleteContact(id) {
+    this.http.delete(`/${id}`).subscribe();
   }
 
   updateContact(contact): Observable<any> {
-    return this.http.put<Contact>(`contacts/${contact._id}`, contact);
+    return this.http.put<Contact>(`/${contact._id}`, contact);
   }
 
 }
