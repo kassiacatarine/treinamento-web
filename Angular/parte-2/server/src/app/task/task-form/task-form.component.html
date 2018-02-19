@@ -1,4 +1,4 @@
-<div [id]="link" uk-modal>
+<!-- <div [id]="link" uk-modal>
     <div class="uk-modal-dialog">
         <form class="uk-form-stacked uk-margin" #formTask="ngForm" (ngSubmit)="saveData(formTask)">
             <button class="uk-modal-close-default" type="button" uk-close></button>
@@ -22,6 +22,33 @@
             <div class="uk-modal-footer uk-text-right">
                 <button class="uk-button uk-button-default uk-modal-close" (click)="resetForm(formTask)" type="button">Cancela</button>
                 <button class="uk-button uk-button-primary" type="submit">Salvar</button>
+            </div>
+        </form>
+    </div>
+</div> -->
+<div class="card-panel col s6 offset-s3 center-align">
+    <div class="row">
+        <form class="col s12" #formTask="ngForm" (ngSubmit)="saveData(formTask)">
+            <h4 class="header center-align">{{ title }}</h4>
+            <div class="row">
+                <div class="input-field col s5 offset-s1">
+                    <input id="name" type="text" class="validate" name="name" [ngModel]="task?.name" ngModel>
+                    <label for="name" [ngClass]="{'active': task?.name}">Nome</label>
+                </div>
+                <div class="col s4 offset-s1">
+                    <label for="date">Data</label>
+                    <input id="date" type="date" name="date" [ngModel]="task?.date" ngModel>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s10 offset-s1">
+                    <textarea id="description" class="materialize-textarea" name="description" [ngModel]="task?.description" ngModel></textarea>
+                    <label for="description" [ngClass]="{'active': task?.description}">Descrição</label>
+                </div>
+            </div>
+            <div class="card-action">
+                <a class="btn-flat waves-effect waves-black left" (click)="resetForm(formTask)" routerLink="/task">Cancelar</a>
+                <button class="btn-flat waves-effect waves-green right" type="submit">Salvar</button>
             </div>
         </form>
     </div>

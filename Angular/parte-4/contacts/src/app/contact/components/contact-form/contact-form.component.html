@@ -1,0 +1,61 @@
+<div class="card-panel" fxLayout="column" fxFlex="60%" fxFlex.lt-md="80%">
+    <form class="example-form" [formGroup]="contactForm" (ngSubmit)="saveForm()">
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <h2>Contato</h2>
+        </div>
+        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between" fxLayoutGap.gt-sm="70px">
+            <mat-form-field fxFlex="50%">
+                <input matInput placeholder="Nome" formControlName="firstName">
+            </mat-form-field>
+            <mat-form-field fxFlex="50%">
+                <input matInput placeholder="Sobrenome" formControlName="lastName">
+            </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.gt-sm="50px">
+            <div fxLayout="column" fxFlex="60%">
+                <div fxLayout="row">
+                    <mat-form-field fxFlex>
+                        <input matInput placeholder="Email" formControlName="email">
+                        <mat-error *ngIf="contactForm.get('email').invalid">Email inválido</mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row" formGroupName="info">
+                    <mat-form-field fxFlex>
+                        <input matInput placeholder="Foto" formControlName="avatar">
+                    </mat-form-field>
+                </div>
+            </div>
+            <mat-list>
+                <h3 mat-subheader>Sexo</h3>
+                <mat-radio-group class="example-radio-group" formControlName="gender" fxLayout="column">
+                    <mat-radio-button class="radio-button" *ngFor="let gender of genders" [value]="gender">
+                        {{ gender }}
+                    </mat-radio-button>
+                </mat-radio-group>
+            </mat-list>
+        </div>
+        <div fxLayout="column" formGroupName="info">
+            <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.gt-sm="70px">
+                <mat-form-field fxFlex="60%">
+                    <input matInput placeholder="Empresa" formControlName="company">
+                </mat-form-field>
+                <mat-form-field fxFlex>
+                    <input matInput placeholder="Telefone" formControlName="phone">
+                </mat-form-field>
+            </div>
+            <div fxLayout="row">
+                <mat-form-field fxFlex>
+                    <textarea matInput placeholder="Comentário" formControlName="comments"></textarea>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between" style="margin-top: 3%">
+            <a mat-raised-button>Cancelar</a>
+            <button mat-raised-button color="primary" type="submit">Salvar</button>
+        </div>
+    </form>
+</div>
+<!-- <pre>Form value: {{ contactForm.value | json }}</pre>
+<pre>Form status: {{ contactForm.status | json }}</pre>
+
+<pre><p>Avatar value: {{ contactForm.get('info.avatar').value | json }}</p></pre> -->

@@ -40,9 +40,9 @@ export class TaskService {
     this.taskCreateSource.next(task);
   }
 
-  removeTask(task: Task): void {
+  removeTask(id: string): void {
     for (let i = 0; i < this.tasks.length; i++) {
-      if (task == this.tasks[i]) {
+      if (id === this.tasks[i].id) {
         this.tasks.splice(i, 1);
         this.setLocalStorage(this.tasks);
       }
@@ -55,8 +55,17 @@ export class TaskService {
         item.name = task.name;
         item.date = task.date;
         item.status = task.status;
+        item.description = task.description;
       }
     });
     this.setLocalStorage(this.tasks);
+  }
+
+  getTask(id): any {
+    this.getTasks();
+    const task = this.tasks.filter(function(item) {
+      return item.id === id;
+    });
+    return task[0];
   }
 }

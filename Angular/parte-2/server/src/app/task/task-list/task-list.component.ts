@@ -26,8 +26,8 @@ export class TaskListComponent implements OnInit {
     this.orderListName();
   }
 
-  changeStatus(inputStatus, task): void {
-    task.status = inputStatus;
+  changeStatus(task): void {
+    task.status = !task.status;
     this.taskService.updateTask(task);
   }
 

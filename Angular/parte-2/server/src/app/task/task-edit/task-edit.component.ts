@@ -10,16 +10,9 @@ import { TaskService } from '../service/task.service';
 export class TaskEditComponent implements OnInit {
 
   @Input() task: Task;
-  link = 'modal-edit-task';
-  constructor(private taskService: TaskService) { }
+  constructor() { }
 
   ngOnInit() {
   }
 
-  editTask(taskedited) {
-    console.log(taskedited);
-    this.task.name = taskedited.name;
-    this.task.date = taskedited.date;
-    this.taskService.updateTask(this.task);
-  }
 }
