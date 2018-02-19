@@ -1,0 +1,76 @@
+<div class="card-panel" fxLayout="column" fxFlex="70%" fxFlex.lt-md="80%">
+    <form class="example-form" [formGroup]="contactForm" (ngSubmit)="saveForm()">
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <h3>Contato</h3>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="70px">
+            <mat-form-field fxFlex="40%">
+                <input matInput placeholder="Nome" formControlName="firstName">
+            </mat-form-field>
+            <mat-form-field fxFlex="40%">
+                <input matInput placeholder="Sobrenome" formControlName="lastName">
+            </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutGap="70px">
+            <mat-form-field fxFlex="70%">
+                <input matInput placeholder="Email" formControlName="email">
+                <mat-error *ngIf="contactForm.get('email').invalid">Email inválido</mat-error>
+            </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutGap="70px">
+            <mat-list>
+                <h3 mat-subheader>Sexo</h3>
+                <mat-radio-group class="example-radio-group" formControlName="gender" fxLayout="column">
+                    <mat-radio-button class="radio-button" *ngFor="let gender of genders" [value]="gender">
+                        {{ gender }}
+                    </mat-radio-button>
+                </mat-radio-group>
+            </mat-list>
+        </div>
+    </form>
+</div>
+<!-- <pre>Form value: {{ contactForm.value | json }}</pre>
+<pre>Form status: {{ contactForm.status | json }}</pre>
+
+<pre><p>Avatar value: {{ contactForm.get('info.avatar').value | json }}</p></pre> -->
+<!-- <div fxLayout="column" fxLayoutAlign="start">
+    <mat-form-field>
+        <input matInput placeholder="Nome" formControlName="firstName">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Sobrenome" formControlName="lastName">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Email" formControlName="email">
+        <mat-error *ngIf="contactForm.get('email').invalid">Email inválido</mat-error>
+    </mat-form-field>
+    <mat-list>
+        <h3 mat-subheader>Género</h3>
+        <mat-radio-group class="example-radio-group" formControlName="gender" fxLayout="column">
+            <mat-radio-button class="radio-button" *ngFor="let gender of genders" [value]="gender">
+                {{ gender }}
+            </mat-radio-button>
+        </mat-radio-group>
+    </mat-list>
+    <div formGroupName="info">
+        <mat-form-field>
+            <input matInput placeholder="Foto" formControlName="avatar">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Telefone" formControlName="phone">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Empresa" formControlName="company">
+        </mat-form-field>
+        <mat-form-field>
+            <textarea matInput placeholder="Comentário" formControlName="comments"></textarea>
+        </mat-form-field>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="space-around">
+        <a mat-raised-button>Cancelar</a>
+        <button mat-raised-button color="primary" type="submit">Salvar</button>
+    </div>
+    <div fxLayoutAlign="space-around">
+    </div>
+</div> -->
