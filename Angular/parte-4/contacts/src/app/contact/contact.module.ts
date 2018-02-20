@@ -16,6 +16,8 @@ import { ContactEditComponent } from './components/contact-edit/contact-edit.com
 import { ContactDeleteComponent } from './components/contact-delete/contact-delete.component';
 import { ContactService } from './services/contact.service';
 import { ContactNewComponent } from './components/contact-new/contact-new.component';
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -23,6 +25,7 @@ import { ContactNewComponent } from './components/contact-new/contact-new.compon
     MaterialModule,
     FlexLayoutModule,
     RouterModule,
+    ReactiveFormsModule,
     ContactRoutingModule
   ],
   providers: [
@@ -35,7 +38,8 @@ import { ContactNewComponent } from './components/contact-new/contact-new.compon
     ContactDetailComponent,
     ContactEditComponent,
     ContactDeleteComponent,
-    ContactNewComponent
+    ContactNewComponent,
+    ContactFormComponent
   ]
 })
 export class ContactModule { }

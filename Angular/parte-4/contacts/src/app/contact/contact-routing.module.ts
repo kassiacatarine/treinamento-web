@@ -10,11 +10,11 @@ import { ContactNewComponent } from './components/contact-new/contact-new.compon
 
 const routes: Routes = [
   { path: '', component: ContactComponent, children: [
-    { path: '', component: ContactListComponent, outlet: 'list' },
+    { path: '', component: ContactListComponent },
     { path: 'new', component: ContactNewComponent },
     { path: ':id', children: [
       { path: '', component: ContactDetailComponent },
-      { path: 'edit', component: ContactEditComponent },
+      { path: 'edit', component: ContactEditComponent, outlet: 'list' },
       { path: 'delete', component: ContactDeleteComponent }
     ]}
   ]}
